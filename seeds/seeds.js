@@ -1,10 +1,69 @@
 //Import the models
-const Boardgame = require(`./Boardgame`);
+const Game = require(`../models/Game`);
+const GameCategory = require(`../models/GameCategory`);
+const Shop = require(`../models/Shop`)
 //Require sequelize through the connection file
 const sequelize = require(`../config/connection`);
 
 // Add Data
-const boardgameData = [
+const categoryData = [
+    {
+        name: `Abstract Strategy`
+    },
+    {
+        name: `Action`
+    },
+    {
+        name: `Adventure`
+    },
+    {
+        name: `Age of Reason`
+    },
+    {
+        name: `Educational`
+    },
+    {
+        name: `Puzzle`
+    },
+    {
+        name: `Ancient`
+    },
+    {
+        name: `Fighting`
+    },
+    {
+        name: `Horror`
+    },
+    {
+        name: `Party Game`
+    },
+    {
+        name: `Bluffing`
+    },
+    {
+        name: `Card Game`
+    },
+    {
+        name: `City Building`
+    },
+    {
+        name: `Animals`
+    },
+    {
+        name: `Dice`
+    },
+    {
+        name: `Economic`
+    },
+    {
+        name: `Movies`
+    },
+    {
+        name: `Mythology`
+    },
+];
+
+const gameData = [
     {
         title:`Here to Slay`,
         minPlayers: 2,
@@ -317,11 +376,24 @@ const boardgameData = [
     },
 ];
 
+const shopData = [
+    {
+        
+    },
+    {
+
+    },
+    {
+
+    }
+];
 
 //Seeds function
 const seedMe = async () => {
 	await sequelize.sync({force: true});
-	await Boardgame.bulkCreate(boardgameData);
+	await Game.bulkCreate(gameData);
+    await GameCategory.bulkCreate(categoryData);
+
 	console.log(`Seeding completed :)`);
 	process.exit(0)
 };

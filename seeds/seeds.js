@@ -1,7 +1,10 @@
 //Import the models
 const Game = require(`../models/Game`);
 const Category = require(`../models/Category`);
-const Shop = require(`../models/Shop`)
+const Shop = require(`../models/Shop`);
+const User = require(`../models/User`);
+const Review = require(`../models/Review`);
+
 //Require sequelize through the connection file
 const sequelize = require(`../config/connection`);
 
@@ -388,12 +391,56 @@ const shopData = [
     },
 ];
 
+const userData = [
+    {
+        username: `David Rodriguez`,
+        password: `Password#1`,
+        currentGame: null
+    },
+    {
+        username: `Maria Afzal`,
+        password: `Password#2`,
+        currentGame: null
+    },
+    {
+        username: `Rahul Basu`,
+        password: `Password#3`,
+        currentGame: null
+    },
+    {
+        username: `Manjot Padda`,
+        password: `Password#4`,
+        currentGame: null
+    },
+];
+
+const reviewData = [
+    {
+        rating: 3,
+        review: `Really good game!`,
+    },
+    {
+        rating: 2,
+        review: `Boooring`,
+    },
+    {
+        rating: 1,
+        review: `Worst game ever!`,
+    },
+    {
+        rating: 5,
+        review: `Instant favorite!`
+    },
+];
+
 //Seeds function
 const seedMe = async () => {
 	await sequelize.sync({force: true});
 	await Game.bulkCreate(gameData);
     await Category.bulkCreate(categoryData);
     await Shop.bulkCreate(shopData);
+    await User.bulkCreate(userData);
+
 	console.log(`Seeding completed :)`);
 	process.exit(0)
 };

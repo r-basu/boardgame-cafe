@@ -17,6 +17,9 @@ Game.belongsToMany(Category)
 Category.belongsToMany(Game)
 GameCategory.belongsTo(Game)
 GameCategory.belongsTo(Category)
+Review.belongsTo(Game, {
+    onDelete: 'CASCADE'
+})
 Review.belongsTo(User, {
     onDelete: 'CASCADE'
 });

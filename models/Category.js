@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Category extends Model { }
 
-Review.init({
+Category.init({
     name: {
         type: DataTypes.STRING,
         allowNull: false

@@ -1,6 +1,6 @@
 //Import the models
 const Game = require(`../models/Game`);
-const GameCategory = require(`../models/GameCategory`);
+const Category = require(`../models/Category`);
 const Shop = require(`../models/Shop`)
 //Require sequelize through the connection file
 const sequelize = require(`../config/connection`);
@@ -392,7 +392,7 @@ const shopData = [
 const seedMe = async () => {
 	await sequelize.sync({force: true});
 	await Game.bulkCreate(gameData);
-    await GameCategory.bulkCreate(categoryData);
+    await Category.bulkCreate(categoryData);
     await Shop.bulkCreate(shopData);
 	console.log(`Seeding completed :)`);
 	process.exit(0)

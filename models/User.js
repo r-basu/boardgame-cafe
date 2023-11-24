@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 class User extends Model { }
 
 User.init({
-    // add properites here, ex:
     username: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -19,7 +18,7 @@ User.init({
         }
     },
     currentGame: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: true,
     }
 }, {

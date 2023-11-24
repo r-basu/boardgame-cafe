@@ -6,11 +6,10 @@ const RecentGame = require("./RecentGame");
 const GameCategory = require("./GameCategory");
 const Category = require("./Category")
 
-User.belongsTo(Game, {
-    onDelete: 'CASCADE'
-});
+User.belongsTo(Game)
 User.hasMany(RecentGame)
 RecentGame.belongsTo(Game)
+RecentGame.belongsTo(User)
 Game.hasMany(User)
 Game.hasMany(Review)
 Game.belongsTo(Shop)

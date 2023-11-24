@@ -378,14 +378,14 @@ const gameData = [
 
 const shopData = [
     {
-        
+        name: `The Adventures Guild`
     },
     {
-
+        name: `Games On Tap`
     },
     {
-
-    }
+        name: `The Round Table`
+    },
 ];
 
 //Seeds function
@@ -393,7 +393,7 @@ const seedMe = async () => {
 	await sequelize.sync({force: true});
 	await Game.bulkCreate(gameData);
     await GameCategory.bulkCreate(categoryData);
-
+    await Shop.bulkCreate(shopData);
 	console.log(`Seeding completed :)`);
 	process.exit(0)
 };

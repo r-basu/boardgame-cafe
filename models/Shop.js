@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 class Shop extends Model { }
 
 Shop.init({
-    shopName: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
     }

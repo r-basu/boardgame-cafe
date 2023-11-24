@@ -4,7 +4,9 @@
   "description": "An application to track a stores available boardgames, status and reviews from its users.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seeds.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,5 +19,6 @@
     "express-session": "^1.17.3",
     "mysql2": "^3.6.3",
     "sequelize": "^6.35.1"
-  }
+  },
+  "keywords": []
 }

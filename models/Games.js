@@ -1,12 +1,16 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Game extends Model { }
+class Games extends Model { }
 
-Game.init({
+Games.init({
     title: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    userId:{
+        type: DataTypes.INTEGER,
+        allowNull: true
     },
     isAvailable: {
         type: DataTypes.BOOLEAN,
@@ -41,4 +45,4 @@ Game.init({
     sequelize
 });
 
-module.exports = Game
+module.exports = Games

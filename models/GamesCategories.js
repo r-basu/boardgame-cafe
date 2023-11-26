@@ -1,12 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class GameCategory extends Model { }
+class GamesCategories extends Model { }
 
-GameCategory.init({
+GamesCategories.init({
 
 }, {
     sequelize
 });
 
-module.exports = GameCategory
+module.exports = GamesCategories

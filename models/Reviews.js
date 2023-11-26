@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Review extends Model { }
+class Reviews extends Model { }
 
-Review.init({
+Reviews.init({
     rating: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -13,7 +13,7 @@ Review.init({
         allowNull: false,
         defaultValue: DataTypes.NOW
     },
-    review: {
+    text: {
         type: DataTypes.TEXT,
         allowNull: false
     }
@@ -21,4 +21,4 @@ Review.init({
     sequelize
 });
 
-module.exports = Review
+module.exports = Reviews

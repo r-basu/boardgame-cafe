@@ -39,22 +39,6 @@ Games.init({
         type: DataTypes.STRING,
         allowNull: false
     },
-    userId: {
-        type: DataTypes.INTEGER,
-        allowNull:true,
-        references: {
-            model: Users,
-            key: `id`
-        }
-    },
-    shopId: {
-        type: DataTypes.INTEGER,
-        allowNull:true,
-        references: {
-            model: Shops,
-            key: `id`
-        }
-    },
 }, {
     sequelize
 });

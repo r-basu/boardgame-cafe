@@ -1,9 +1,5 @@
 //Import the models
-const Games = require(`../models/Games`);
-const Categories = require(`../models/Categories`);
-const Shops = require(`../models/Shops`);
-const Users = require(`../models/Users`);
-const Reviews = require(`../models/Reviews`);
+const {Games, Categories, Shops, Users, Reviews} = require(`../models`);
 
 //Require sequelize through the connection file
 const sequelize = require(`../config/connection`);
@@ -502,6 +498,8 @@ const reviewData = [
         gameId: 4,
     },
 ];
+
+
 
 //Seeds function
 const seedMe = async () => {

@@ -2,46 +2,31 @@ const Users = require("./Users");
 const Games = require("./Games");
 const Reviews = require("./Reviews");
 const Shops = require("./Shops");
-const RecentGames = require("./RecentGames");
 const Categories = require("./Categories")
 
 Users.hasMany(Games);
-Games.belongsTo(Users, {
-    foreignKey: `userId`
-});
+Games.belongsTo(Users,);
 
 Users.hasMany(Reviews, {
     onDelete: 'CASCADE',
 });
-Reviews.belongsTo(Users, {
-    foreignKey: `userId`
-});
+Reviews.belongsTo(Users);
 
 Games.hasMany(Reviews, {
     onDelete: 'CASCADE'
 });
-Reviews.belongsTo(Games, {
-    foreignKey: `gameId`
-})
+Reviews.belongsTo(Games)
 
 Shops.hasMany(Games);
-Games.belongsTo(Shops, {
-    foreignKey: `shopId`
-});
+Games.belongsTo(Shops);
 
 Games.belongsToMany(Categories, {
-    through: `GamesCategories`
+    through: `GamesCategories`,
 });
 
 Categories.belongsToMany(Games, {
-    through: `GamesCategories`
+    through: `GamesCategories`,
 });
-
-// Users.hasMany(RecentGames);
-// RecentGames.belongsTo(Users);
-
-// Games.hasMany(RecentGames);
-// RecentGames.belongsTo(Games);
 
 module.exports = {
     Users,
@@ -49,5 +34,5 @@ module.exports = {
     Reviews,
     Shops,
     Categories,
-    RecentGames
+
 };

@@ -17,12 +17,6 @@ Reviews.belongsTo(Users, {
     foreignKey: `userId`
 });
 
-Users.hasMany(RecentGames);
-RecentGames.belongsTo(Users);
-
-Games.hasMany(RecentGames);
-RecentGames.belongsTo(Games);
-
 Games.hasMany(Reviews, {
     onDelete: 'CASCADE'
 });
@@ -43,6 +37,12 @@ Categories.belongsToMany(Games, {
     through: `GamesCategories`
 });
 
+// Users.hasMany(RecentGames);
+// RecentGames.belongsTo(Users);
+
+// Games.hasMany(RecentGames);
+// RecentGames.belongsTo(Games);
+
 module.exports = {
     Users,
     Games,
@@ -50,4 +50,4 @@ module.exports = {
     Shops,
     Categories,
     RecentGames
-}
+};

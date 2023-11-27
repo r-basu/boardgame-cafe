@@ -480,22 +480,26 @@ const reviewData = [
     {
         rating: 3,
         text: `Really good game!`,
-        userId: 1
+        userId: 1,
+        gameId: 1,
     },
     {
         rating: 2,
         text: `Boooring`,
-        userId: 2
+        userId: 2,
+        gameId: 2,
     },
     {
         rating: 1,
         text: `Worst game ever!`,
-        userId: 3
+        userId: 3,
+        gameId: 3,
     },
     {
         rating: 5,
         text: `Instant favorite!`,
-        userId: 4
+        userId: 4,
+        gameId: 4,
     },
 ];
 

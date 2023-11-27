@@ -1,23 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Board Games</title>
-</head>
-<header>
-    <nav>
-        <ul>
-        <li><a href='#'>login</a></li>
-        <li><a href='#'>h1</a></li>
-        <li><a href='#'>Games page</a></li>
-        </ul>
 
-    </nav>
-</header>
-<body>
     
     
 </body>
 </html>
+<div>
+    {{body}}
+    <a>Login</a>
+    <h1>BoardGame Form</h1>
+    <a>Games Page</a>
+</div>
+
+<div class="formBox">
+<h2>Complete form for game suggestion</h2>
+    <form id="addTodoForm">
+        <input id="addToDoInput" placeholder="form">
+            <p>Title:</p>{{Game.title}}
+            <p>Age:</p>{{Game.minAge}}
+            <p>Players:</p>{{Game.maxPlayers}}
+            <p>Categories:</p>{{Category.name}}
+            <p>Game Duration:</p>
+            <button>Game Search</button>
+    </form>
+</div>
+        
+<section class="container">
+    <h3 class="game-title">{{game.title}}</h3>
+      <section class="flex-row justify-center">
+    {{#each game.title as |title|}}
+    <section class="card">
+      <a href="/title/{{id}}">
+        <header>{{title}}</header>
+
+        <div class="card-body">
+          <img src="/images/{{gamename}}" alt="{{description}}">
+        </div>
+      </a>
+    </section>
+    {{/each}}
+</section>
+

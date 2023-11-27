@@ -1,46 +1,51 @@
 const Users = require("./Users");
 const Games = require("./Games");
 const Reviews = require("./Reviews");
-const Shops = require("./Shops");
-const RecentGames = require("./RecentGames");
-const GamesCategories = require("./GamesCategories");
-const Categories = require("./Categories")
+// const Shops = require("./Shops");
+// const RecentGames = require("./RecentGames");
+// const Categories = require("./Categories")
 
 Users.hasMany(Games);
-Games.belongsTo(Users);
-
-Users.hasMany(Reviews);
-Reviews.belongsTo(Users, {
-    onDelete: 'CASCADE'
+Games.belongsTo(Users, {
+    foreignKey: `userId`
 });
 
-Users.hasMany(RecentGames);
-RecentGames.belongsTo(Users);
-
-Games.hasMany(RecentGames);
-RecentGames.belongsTo(Games);
-
-Games.hasMany(Reviews);
-Reviews.belongsTo(Games, {
+Users.hasMany(Reviews, {
     onDelete: 'CASCADE'
+});
+Reviews.belongsTo(Users, {
+    foreignKey: `userId`
+});
+
+// Users.hasMany(RecentGames);
+// RecentGames.belongsTo(Users);
+
+// Games.hasMany(RecentGames);
+// RecentGames.belongsTo(Games);
+
+Games.hasMany(Reviews, {
+    onDelete: 'CASCADE'
+});
+Reviews.belongsTo(Games, {
+    foreignKey: `gameId`
 })
 
-Shops.hasMany(Games);
-Games.belongsTo(Shops);
+// Shops.hasMany(Games);
+// Games.belongsTo(Shops);
 
-// Games.belongsToMany(Categories);
+// Games.belongsToMany(Categories, {
+//     through: `GamesCategories`
+// });
 
-// Categories.belongsToMany(Games);
-// GamesCategories.belongsTo(Games);
-
-// GamesCategories.belongsTo(Categories);
+// Categories.belongsToMany(Games, {
+//     through:`GamesCategories`
+// });
 
 module.exports = {
     Users,
     Games,
     Reviews,
-    Shops,
-    Categories,
-    GamesCategories,
-    RecentGames
+    // Shops,
+    // Categories,
+    // RecentGames
 }

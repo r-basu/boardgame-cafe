@@ -1,70 +1,70 @@
 //Import the models
 const Games = require(`../models/Games`);
-const Categories = require(`../models/Categories`);
-const Shops = require(`../models/Shops`);
+// const Categories = require(`../models/Categories`);
+// const Shops = require(`../models/Shops`);
 const Users = require(`../models/Users`);
 const Reviews = require(`../models/Reviews`);
 
 //Require sequelize through the connection file
 const sequelize = require(`../config/connection`);
 
-// Add Data
-const categoryData = [
-    {
-        name: `Abstract Strategy`
-    },
-    {
-        name: `Action`
-    },
-    {
-        name: `Adventure`
-    },
-    {
-        name: `Age of Reason`
-    },
-    {
-        name: `Educational`
-    },
-    {
-        name: `Puzzle`
-    },
-    {
-        name: `Ancient`
-    },
-    {
-        name: `Fighting`
-    },
-    {
-        name: `Horror`
-    },
-    {
-        name: `Party Game`
-    },
-    {
-        name: `Bluffing`
-    },
-    {
-        name: `Card Game`
-    },
-    {
-        name: `City Building`
-    },
-    {
-        name: `Animals`
-    },
-    {
-        name: `Dice`
-    },
-    {
-        name: `Economic`
-    },
-    {
-        name: `Movies`
-    },
-    {
-        name: `Mythology`
-    },
-];
+// // Add Data
+// const categoryData = [
+//     {
+//         name: `Abstract Strategy`
+//     },
+//     {
+//         name: `Action`
+//     },
+//     {
+//         name: `Adventure`
+//     },
+//     {
+//         name: `Age of Reason`
+//     },
+//     {
+//         name: `Educational`
+//     },
+//     {
+//         name: `Puzzle`
+//     },
+//     {
+//         name: `Ancient`
+//     },
+//     {
+//         name: `Fighting`
+//     },
+//     {
+//         name: `Horror`
+//     },
+//     {
+//         name: `Party Game`
+//     },
+//     {
+//         name: `Bluffing`
+//     },
+//     {
+//         name: `Card Game`
+//     },
+//     {
+//         name: `City Building`
+//     },
+//     {
+//         name: `Animals`
+//     },
+//     {
+//         name: `Dice`
+//     },
+//     {
+//         name: `Economic`
+//     },
+//     {
+//         name: `Movies`
+//     },
+//     {
+//         name: `Mythology`
+//     },
+// ];
 
 const gameData = [
     {
@@ -410,17 +410,17 @@ const gameData = [
     },
 ];
 
-const shopData = [
-    {
-        name: `The Adventures Guild`
-    },
-    {
-        name: `Games On Tap`
-    },
-    {
-        name: `The Round Table`
-    },
-];
+// const shopData = [
+//     {
+//         name: `The Adventures Guild`
+//     },
+//     {
+//         name: `Games On Tap`
+//     },
+//     {
+//         name: `The Round Table`
+//     },
+// ];
 
 const userData = [
     {
@@ -448,19 +448,23 @@ const userData = [
 const reviewData = [
     {
         rating: 3,
-        review: `Really good game!`,
+        text: `Really good game!`,
+        userId: 1
     },
     {
         rating: 2,
-        review: `Boooring`,
+        text: `Boooring`,
+        userId: 2
     },
     {
         rating: 1,
-        review: `Worst game ever!`,
+        text: `Worst game ever!`,
+        userId: 3
     },
     {
         rating: 5,
-        review: `Instant favorite!`
+        text: `Instant favorite!`,
+        userId: 4
     },
 ];
 
@@ -468,9 +472,10 @@ const reviewData = [
 const seedMe = async () => {
 	await sequelize.sync({force: true});
 	await Games.bulkCreate(gameData);
-    await Categories.bulkCreate(categoryData);
-    await Shops.bulkCreate(shopData);
+    // await Categories.bulkCreate(categoryData);
+    // await Shops.bulkCreate(shopData);
     await Users.bulkCreate(userData);
+    await Reviews.bulkCreate(reviewData);
 
 	console.log(`Seeding completed :)`);
 	process.exit(0)

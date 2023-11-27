@@ -1,9 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Users = require("./Users");
+const Shops = require("./Shops");
 
-class Game extends Model { }
+class Games extends Model { }
 
-Game.init({
+Games.init({
     title: {
         type: DataTypes.STRING,
         allowNull: false
@@ -36,9 +38,25 @@ Game.init({
     description: {
         type: DataTypes.STRING,
         allowNull: false
-    }
+    },
+    userId: {
+        type: DataTypes.INTEGER,
+        allowNull:true,
+        references: {
+            model: Users,
+            key: `id`
+        }
+    },
+    shopId: {
+        type: DataTypes.INTEGER,
+        allowNull:true,
+        references: {
+            model: Shops,
+            key: `id`
+        }
+    },
 }, {
     sequelize
 });
 
-module.exports = Game
+module.exports = Games

@@ -10,6 +10,9 @@ router.use('/api/games', gameRoutes)
 const userRoutes = require("./userRoutes")
 router.use('/api/users', userRoutes)
 
+const reviewRoutes = require("./reviewRoutes")
+router.use('/api/reviews', reviewRoutes)
+
 router.get("/", (req, res) => {
   res.render("home")
   console.log("Homepage")

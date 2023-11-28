@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const { User } = require('../models');
+const { User, Game } = require('../models');
 
 // Logout of Session
 router.get("/logout", (req, res) => {
@@ -43,6 +43,15 @@ router.post("/login", (req, res) => {
             }
         }
     })
+})
+
+// Add Current Game
+router.post("/:userId/addCurrentGame/:gameId",(req,res)=>{
+  User.findByPk(req.params.userId).then(dbUser=>{
+    dbUser.addGame(req.params.gameId).then(data=>{
+        res.json(data)
+    })
+  })
 })
 
 module.exports = router;

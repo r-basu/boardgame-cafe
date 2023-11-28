@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 
 // Find One Review by UserID
 router.get("/:userId", (req, res) => {
-  Review.findAll({ where: { UserId: req.params.userId } })
+  Review.findAll({ where: { UsgerId: req.params.userId } })
     .then(dbReviews => {
       if (!dbReviews) {
         res.status(404).json({ msg: "no such reviews" })

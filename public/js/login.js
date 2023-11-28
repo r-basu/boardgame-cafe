@@ -1,8 +1,8 @@
 document.querySelector("#loginForm").addEventListener("submit",e=>{
   e.preventDefault();
   const userObj = {
-      username:document.querySelector("#username").value,
-      password:document.querySelector("#password").value
+      username:document.querySelector("#user-login").value,
+      password:document.querySelector("#password-login").value
   }
   fetch("/api/users/login",{
       method:"POST",

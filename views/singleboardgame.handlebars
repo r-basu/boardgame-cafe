@@ -1,0 +1,27 @@
+<div>
+  {{body}}
+  <a>Login</a>
+  <h1>BoardGame Form</h1>
+  <a>Games Page</a>
+</div>
+
+<div class="gameAvailable">
+    <h2>{{Game.title}}</h2>
+    <checkbox>Game Available</checkbox>
+</div>
+
+<section class="gameInfo">
+    <container class="gameName">
+    <a>{{game_title}}</a>
+    <img src="{{game_image_url}}" alt="Board Game Image">
+    <p class="description">Game Description</p>
+    </container>
+    <div>
+    <h3>Stats for {{game_title}}</h3>
+    <p class="lenght">Game Duration {{game_lenght}}</p>
+    <p class="numPlayer">Amount of Players {{min_player}} {{max_player}}</p>
+    <p class="playerAge">Suitable Ages {{min_age}} {{max_age}}</p>
+    <p class="category">Game Categories {{game_category}}</p>
+    <p class="shop">Available to purchase at {{game_shop}}</p>
+    </div>
+</section>

@@ -503,7 +503,7 @@ const reviewData = [
 
 //Seeds function
 const seedMe = async () => {
-	await sequelize.sync({force: true});
+	await sequelize.sync({force: false});
 	await Games.bulkCreate(gameData);
     await Categories.bulkCreate(categoryData);
     await Shops.bulkCreate(shopData);

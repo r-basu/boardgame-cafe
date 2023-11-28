@@ -453,6 +453,7 @@ const seedMe = async () => {
     await dbGames[0].addShops([1, 2, 3])
 	console.log(`Seeding completed :)`);
 	process.exit(0)
+    
 };
 
 //call the function

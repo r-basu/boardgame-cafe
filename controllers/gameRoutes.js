@@ -32,7 +32,6 @@ router.get("/:id", (req, res) => {
 })
 
 // Add Category to one game
-// Add Current Game
 router.post("/:gameId/addCategory/:categoryId", (req, res) => {
   Game.findByPk(req.params.gameId).then(dbGame => {
     dbGame.addCategory(req.params.categoryId).then(data => {

@@ -1,5 +1,5 @@
 //Import the models
-const {Games, Categories, Shops, Users, Reviews} = require(`../models`);
+const {Game, Category, Shop, User, Review} = require(`../models`);
 
 //Require sequelize through the connection file
 const sequelize = require(`../config/connection`);
@@ -95,6 +95,9 @@ const categoryData = [
     {
         name: `Mythology`
     },
+    {
+        name: `Deduction`
+    }
 ];
 
 const gameData = [
@@ -107,8 +110,8 @@ const gameData = [
         maxTime: 60,
         isAvailable: true,
         description: `Here to Slay is a competitive role-playing fantasy strategy card game that's all about assembling a party of Heroes and slaying monsters (and sometimes sabotaging your friends too) from the creators of Unstable Unicorns.`,
-        userId: null,
-        shopId: null,
+        userId: 1,
+        shopId: 1,
     },
     {
         title: `Secret Hitler`,
@@ -119,8 +122,8 @@ const gameData = [
         maxTime: 45,
         isAvailable: true,
         description: `Secret Hitler is a dramatic game of political intrigue and betrayal set in 1930s Germany. Each player is randomly and secretly assigned to be a liberal or a fascist, and one player is Secret Hitler.`,
-        userId: null,
-        shopId: null,
+        userId: 2,
+        shopId: 1,
     },
     {
         title: `Battleship`,
@@ -131,8 +134,8 @@ const gameData = [
         maxTime: 60,
         isAvailable: true,
         description: `Each player deploys his ships (of lengths varying from 2 to 5 squares) secretly on a square grid. Then each player shoots at the other's grid by calling a location.`,
-        userId: null,
-        shopId: null,
+        userId: 3,
+        shopId: 1,
     },
     {
         title: `Risk`,
@@ -143,8 +146,8 @@ const gameData = [
         maxTime: 80,
         isAvailable: true,
         description: `Possibly the most popular, mass market war game. The goal is conquest of the world.`,
-        userId: null,
-        shopId: null,
+        userId: 4,
+        shopId: 1,
     },
     {
         title: `Dominos`,
@@ -504,12 +507,12 @@ const reviewData = [
 //Seeds function
 const seedMe = async () => {
 	await sequelize.sync({force: true});
-	await Games.bulkCreate(gameData);
-    await Categories.bulkCreate(categoryData);
-    await Shops.bulkCreate(shopData);
-    await Users.bulkCreate(userData);
-    await Reviews.bulkCreate(reviewData);
-
+    const dbGames = await Game.bulkCreate(gameData);
+	const dbCategories = await Category.bulkCreate(categoryData);
+    await Shop.bulkCreate(shopData);
+    await User.bulkCreate(userData);
+    await Review.bulkCreate(reviewData);
+    await dbGames[0].addCategory([8, 12, 14, 15])
 	console.log(`Seeding completed :)`);
 	process.exit(0)
 };

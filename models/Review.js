@@ -1,11 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Users = require("./Users");
-const Games = require("./Games");
 
-class Reviews extends Model { }
+class Review extends Model { }
 
-Reviews.init({
+Review.init({
     rating: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -23,4 +21,4 @@ Reviews.init({
     sequelize
 });
 
-module.exports = Reviews
+module.exports = Review

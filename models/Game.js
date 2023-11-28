@@ -1,11 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const Users = require("./Users");
-const Shops = require("./Shops");
 
-class Games extends Model { }
+class Game extends Model { }
 
-Games.init({
+Game.init({
     title: {
         type: DataTypes.STRING,
         allowNull: false
@@ -43,4 +41,4 @@ Games.init({
     sequelize
 });
 
-module.exports = Games
+module.exports = Game

@@ -1,8 +1,3 @@
-
-    
-    
-</body>
-</html>
 <div>
   {{body}}
   <a>Login</a>
@@ -24,17 +19,40 @@
 </div>
 
 <section class="container">
-  <h3 class="game-title">{{game.title}}</h3>
-  <section class="flex-row justify-center">
-    {{#each game.title as |title|}}
-    <section class="card">
-      <a href="/title/{{id}}">
-        <header>{{title}}</header>
-
-        <div class="card-body">
-          <img src="/images/{{gamename}}" alt="{{description}}">
-        </div>
-      </a>
-    </section>
-    {{/each}}
+  {{#each games}}
+  <section class="card">
+    <a href="/title/{{id}}">
+      <header>{{title}}</header>
+      <div class="card-body">
+        <img src="/images/{{gamename}}" alt="{{description}}">
+      </div>
+    </a>
   </section>
+  {{/each}}
+</section>
+
+<section class="container">
+  {{#each games}}
+  <section class="card">
+    <a href="/title/{{id}}">
+      <header>{{title}}</header>
+      <div class="card-body">
+        <img src="/images/{{gamename}}" alt="{{description}}">
+      </div>
+    </a>
+  </section>
+  {{/each}}
+</section>
+
+<section class="container">
+  {{#each games}}
+  <section class="card">
+    <a href="/title/{{id}}">
+      <header>{{title}}</header>
+      <div class="card-body">
+        <img src="/images/{{gamename}}" alt="{{description}}">
+      </div>
+    </a>
+  </section>
+  {{/each}}
+</section>

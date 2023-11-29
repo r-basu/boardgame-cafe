@@ -1,0 +1,54 @@
+{{!< layout}}
+<div>
+    {{body}}
+    <a>Login</a>
+    <h1>BoardGame Form</h1>
+    <a>Games Page</a>
+</div>
+
+<div class="profilePage">
+    <a id="userName">Username {{user.username}}</a>
+    <a id="currentGame">Current Game: {{gamename}}</a>
+</div>
+
+<container class="playedGames">
+    <card id="currentGame">
+        <div>
+            <h3 class="game-title">{{gamename}}</h3>
+            <a href="/title/{{id}}"></a>
+        </div>
+    </card>
+    <card id="lastGame">
+        <div>
+            <h3 class="game-title">{{gamename}}</h3>
+            <a href="/title/{{id}}"></a>
+        </div>
+    </card>
+    <card id="previousGame">
+        <div>
+            <h3 class="game-title">{{gamename}}</h3>
+            <a href="/title/{{id}}"></a>
+        </div>
+    </card>
+</container>
+
+<container class="favoriteGames">
+        <card id="currentGame">
+        <div>
+            <h3 class="game-title">{{gamename}}</h3>
+            <a href="/title/{{id}}"></a>
+        </div>
+    </card>
+    <card id="lastGame">
+        <div>
+            <h3 class="game-title">{{gamename}}</h3>
+            <a href="/title/{{id}}"></a>
+        </div>
+    </card>
+    <card id="previousGame">
+        <div>
+            <h3 class="game-title">{{gamename}}</h3>
+            <a href="/title/{{id}}"></a>
+        </div>
+    </card>
+</container>

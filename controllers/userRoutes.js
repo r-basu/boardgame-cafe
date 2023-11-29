@@ -54,4 +54,17 @@ router.post("/:userId/addCurrentGame/:gameId",(req,res)=>{
   })
 })
 
+// Show all users
+router.get(`/`, (req, res) => {
+    User.findAll().then((dbUsers) => {
+        res.json(dbUsers);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({
+            msg: `Something went wrong :(`,
+            err
+        })
+    }) 
+})
+
 module.exports = router;

@@ -4,9 +4,6 @@ const Review = require("./Review");
 const Shop = require("./Shop");
 const Category = require("./Category")
 
-// User.hasMany(Game);
-// Game.belongsTo(User);
-
 User.hasMany(Review, {
     onDelete: 'CASCADE',
 });
@@ -17,8 +14,12 @@ Game.hasMany(Review, {
 });
 Review.belongsTo(Game)
 
-Shop.hasMany(Game);
-Game.belongsTo(Shop);
+Shop.belongsToMany(Game, {
+    through: `ShopGame`,
+});
+Game.belongsToMany(Shop, {
+    through: `ShopGame`,
+});
 
 Game.belongsToMany(Category, {
     through: `GameCategory`,

@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// Find Review by UserID
+// Find All Reviews by Single UserID
 router.get("/:userId", (req, res) => {
   Review.findAll({ where: { UserId: req.params.userId } })
     .then(dbReviews => {

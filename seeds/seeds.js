@@ -423,7 +423,7 @@ const reviewData = [
     {
         rating: 2,
         text: `Boooring`,
-        UserId: 2,
+        UserId: 1,
         GameId: 2,
     },
     {

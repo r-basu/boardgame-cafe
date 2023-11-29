@@ -31,13 +31,4 @@ router.get("/:id", (req, res) => {
   })
 })
 
-// Add Category to one game
-router.post("/:gameId/addCategory/:categoryId", (req, res) => {
-  Game.findByPk(req.params.gameId).then(dbGame => {
-    dbGame.addCategory(req.params.categoryId).then(data => {
-      res.json(data)
-    })
-  })
-})
-
 module.exports = router;

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt");
-const { User, Game } = require('../models');
+const { User, Game, Review } = require('../models');
 
 // Logout of Session
 router.get("/logout", (req, res) => {
@@ -70,7 +70,7 @@ router.get(`/`, (req, res) => {
 // Find One User
 router.get("/:id", (req, res) => {
     User.findByPk(req.params.id, {
-      include: [Game]
+      include: [Game, Review]
     }).then(dbUser => {
       if (!dbUser) {
         res.status(404).json({ msg: "no such user!" })

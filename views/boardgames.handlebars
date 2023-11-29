@@ -22,8 +22,13 @@
       <label for="players">Players:</label>
       <input type="text" id="players" name="players" placeholder="Enter number of players">
 
-      <label for="categories">Categories:</label>
-      <input type="text" id="categories" name="categories" placeholder="Enter categories">
+    <label for="categories">Categories:</label>
+      <select id="categories" name="categories">
+      {{#each categories}}
+      <option value="{{this}}">{{this}}</option>
+      {{/each}}
+      </select>
+    <input type="text" id="categories" name="categories" placeholder="Enter categories">
 
       <label for="duration">Game Duration:</label>
       <input type="text" id="duration" name="duration" placeholder="Enter game duration">

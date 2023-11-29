@@ -4,8 +4,8 @@ const Review = require("./Review");
 const Shop = require("./Shop");
 const Category = require("./Category")
 
-User.hasMany(Game);
-Game.belongsTo(User,);
+// User.hasMany(Game);
+// Game.belongsTo(User);
 
 User.hasMany(Review, {
     onDelete: 'CASCADE',
@@ -23,9 +23,16 @@ Game.belongsTo(Shop);
 Game.belongsToMany(Category, {
     through: `GameCategory`,
 });
-
 Category.belongsToMany(Game, {
     through: `GameCategory`,
+});
+
+// UserGame table will contain all the games that a user has used
+User.belongsToMany(Game, {
+    through: `UserGame`
+});
+Game.belongsToMany(User, {
+    through: `UserGame`
 });
 
 module.exports = {

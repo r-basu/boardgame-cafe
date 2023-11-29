@@ -110,8 +110,7 @@ const gameData = [
         maxTime: 60,
         isAvailable: true,
         description: `Here to Slay is a competitive role-playing fantasy strategy card game that's all about assembling a party of Heroes and slaying monsters (and sometimes sabotaging your friends too) from the creators of Unstable Unicorns.`,
-        userId: 1,
-        shopId: 1,
+        ShopId: 1,
     },
     {
         title: `Secret Hitler`,
@@ -122,8 +121,7 @@ const gameData = [
         maxTime: 45,
         isAvailable: true,
         description: `Secret Hitler is a dramatic game of political intrigue and betrayal set in 1930s Germany. Each player is randomly and secretly assigned to be a liberal or a fascist, and one player is Secret Hitler.`,
-        userId: 2,
-        shopId: 1,
+        ShopId: null,
     },
     {
         title: `Battleship`,
@@ -134,8 +132,7 @@ const gameData = [
         maxTime: 60,
         isAvailable: true,
         description: `Each player deploys his ships (of lengths varying from 2 to 5 squares) secretly on a square grid. Then each player shoots at the other's grid by calling a location.`,
-        userId: 3,
-        shopId: 1,
+        ShopId: null,
     },
     {
         title: `Risk`,
@@ -146,8 +143,7 @@ const gameData = [
         maxTime: 80,
         isAvailable: true,
         description: `Possibly the most popular, mass market war game. The goal is conquest of the world.`,
-        userId: 4,
-        shopId: 1,
+        ShopId: null,
     },
     {
         title: `Dominos`,
@@ -158,8 +154,7 @@ const gameData = [
         maxTime: 30,
         isAvailable: true,
         description: `The timeless family classic of placing matching tiles`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Coup`,
@@ -170,8 +165,7 @@ const gameData = [
         maxTime: 20,
         isAvailable: true,
         description: `Bluff (and call bluffs!) to victory in this card game with no third chances. `,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Codenames`,
@@ -182,8 +176,7 @@ const gameData = [
         maxTime: 30,
         isAvailable: true,
         description: `Give your team clever one-word clues to help them spot their agents in the field. `,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Monopoly`,
@@ -194,8 +187,7 @@ const gameData = [
         maxTime: 240,
         isAvailable: true,
         description: `In this competitive real estate market, there's only one possible outcome: Monopoly!`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Telestrations`,
@@ -206,8 +198,7 @@ const gameData = [
         maxTime: 60,
         isAvailable: true,
         description: `Guess what they drew, then draw what they guessed, and see how funny the changes get.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Uno`,
@@ -218,8 +209,7 @@ const gameData = [
         maxTime: 30,
         isAvailable: true,
         description: `Get rid of your cards first, but don't forget to say "UNO!"`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Jenga`,
@@ -230,8 +220,7 @@ const gameData = [
         maxTime: 20,
         isAvailable: true,
         description: `How high can you go before your tower comes crashing down!?`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Rummikub`,
@@ -242,8 +231,7 @@ const gameData = [
         maxTime: 30,
         isAvailable: true,
         description: `Race to play all your tiles by forming runs or sets, even if they're not your own!`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Chess`,
@@ -254,8 +242,7 @@ const gameData = [
         maxTime: 120,
         isAvailable: true,
         description: `Checkmate your opponent in this timeless abstract.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Checkers`,
@@ -266,8 +253,7 @@ const gameData = [
         maxTime: 60,
         isAvailable: true,
         description: `Players move pieces diagonally to "jump" opponent pieces 'til one side is eliminated.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Connect Four`,
@@ -278,8 +264,7 @@ const gameData = [
         maxTime: 20,
         isAvailable: true,
         description: `Take turns dropping pieces to be the first player to connect four in a row!`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Clue`,
@@ -290,8 +275,7 @@ const gameData = [
         maxTime: 50,
         isAvailable: true,
         description: `Catch the culprit of a crime by identifying who did it, with what, and where.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Pictionary`,
@@ -302,8 +286,7 @@ const gameData = [
         maxTime: 90,
         isAvailable: true,
         description: `Guess what you team is drawing so you can Win, Lose, or Draw.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Werewolf`,
@@ -314,8 +297,7 @@ const gameData = [
         maxTime: 90,
         isAvailable: true,
         description: `Suspicious townsfolk try to identify the murderous outsiders hiding in their group.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Exploding Kittens`,
@@ -326,8 +308,7 @@ const gameData = [
         maxTime: 15,
         isAvailable: true,
         description: `Ask for favors, attack friends, see the future- whatever it takes to avoid exploding!`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Guess Who?`,
@@ -338,8 +319,7 @@ const gameData = [
         maxTime: 20,
         isAvailable: true,
         description: `Find your opponent's character by narrowing down what his or her features are.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Labyrinth`,
@@ -350,8 +330,7 @@ const gameData = [
         maxTime: 25,
         isAvailable: true,
         description: `Hunt for treasure in an ever-changing maze. Will you open a path? Or block a rival?`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `5 Second Rule`,
@@ -362,8 +341,7 @@ const gameData = [
         maxTime: 30,
         isAvailable: true,
         description: `Think quickly, while under the pressure of your opponents staring at you waiting!`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Acquire`,
@@ -374,8 +352,7 @@ const gameData = [
         maxTime: 120,
         isAvailable: true,
         description: `Invest, divest, and stage hostile takeovers in this classic real estate game. `,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `7 Wonders`,
@@ -386,8 +363,7 @@ const gameData = [
         maxTime: 60,
         isAvailable: true,
         description: `Draft cards to develop your ancient civilization and build its Wonder of the World. `,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Flash Point: Fire Rescue`,
@@ -398,8 +374,7 @@ const gameData = [
         maxTime: 60,
         isAvailable: true,
         description: `Smoke! Fire! Work as a team to save as many as you can from a blazing inferno.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Zombie Dice`,
@@ -410,8 +385,7 @@ const gameData = [
         maxTime: 20,
         isAvailable: true,
         description: `Eat as many tasty brains as you dare, without getting shotgunned.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Yahtzee`,
@@ -422,8 +396,7 @@ const gameData = [
         maxTime: 45,
         isAvailable: true,
         description: `Yes the dice are fickle, but score your combos strategically to max out on points.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Drunk Stoned or Stupid: A Party Game (2014)`,
@@ -434,8 +407,7 @@ const gameData = [
         maxTime: 30,
         isAvailable: true,
         description: `Name and shame your friends in this game of embarrassing accusations`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Vikings`,
@@ -446,8 +418,7 @@ const gameData = [
         maxTime: 90,
         isAvailable: true,
         description: `Different-colored Vikings have different responsibilities. Which do you need most?`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Ticket to Ride`,
@@ -458,8 +429,7 @@ const gameData = [
         maxTime: 60,
         isAvailable: true,
         description: `Build your railroad across North America to connect cities and complete tickets.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
     {
         title: `Sushi Roll`,
@@ -470,8 +440,7 @@ const gameData = [
         maxTime: 20,
         isAvailable: true,
         description: `Draft the most valuable collection of sushi dice as the conveyor belt rolls by.`,
-        userId: null,
-        shopId: null,
+        ShopId: null,
     },
 ];
 
@@ -479,40 +448,39 @@ const reviewData = [
     {
         rating: 3,
         text: `Really good game!`,
-        userId: 1,
-        gameId: 1,
+        UserId: 1,
+        GameId: 1,
     },
     {
         rating: 2,
         text: `Boooring`,
-        userId: 2,
-        gameId: 2,
+        UserId: 2,
+        GameId: 2,
     },
     {
         rating: 1,
         text: `Worst game ever!`,
-        userId: 3,
-        gameId: 3,
+        UserId: 3,
+        GameId: 3,
     },
     {
         rating: 5,
         text: `Instant favorite!`,
-        userId: 4,
-        gameId: 4,
+        UserId: 4,
+        GameId: 4,
     },
 ];
-
-
 
 //Seeds function
 const seedMe = async () => {
 	await sequelize.sync({force: true});
-    const dbGames = await Game.bulkCreate(gameData);
-	const dbCategories = await Category.bulkCreate(categoryData);
     await Shop.bulkCreate(shopData);
-    await User.bulkCreate(userData);
+    const dbGames = await Game.bulkCreate(gameData);
+    const dbCategories = await Category.bulkCreate(categoryData);
+    const dbUsers = await User.bulkCreate(userData);
     await Review.bulkCreate(reviewData);
-    await dbGames[0].addCategory([8, 12, 14, 15])
+    await dbUsers[0].addGames([1, 2]);
+    await dbGames[0].addCategories([8, 12, 14, 15]);
 	console.log(`Seeding completed :)`);
 	process.exit(0)
 };

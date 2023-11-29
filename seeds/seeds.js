@@ -1,11 +1,45 @@
 //Import the models
-const Game = require(`../models/Game`);
-const GameCategory = require(`../models/GameCategory`);
-const Shop = require(`../models/Shop`)
+const {Game, Category, Shop, User, Review} = require(`../models`);
+
 //Require sequelize through the connection file
 const sequelize = require(`../config/connection`);
 
 // Add Data
+const shopData = [
+    {
+        name: `The Adventures Guild`
+    },
+    {
+        name: `Games On Tap`
+    },
+    {
+        name: `The Round Table`
+    },
+];
+
+const userData = [
+    {
+        username: `David Rodriguez`,
+        password: `Password#1`,
+        currentGame: null
+    },
+    {
+        username: `Maria Afzal`,
+        password: `Password#2`,
+        currentGame: null
+    },
+    {
+        username: `Rahul Basu`,
+        password: `Password#3`,
+        currentGame: null
+    },
+    {
+        username: `Manjot Padda`,
+        password: `Password#4`,
+        currentGame: null
+    },
+];
+
 const categoryData = [
     {
         name: `Abstract Strategy`
@@ -61,6 +95,9 @@ const categoryData = [
     {
         name: `Mythology`
     },
+    {
+        name: `Deduction`
+    }
 ];
 
 const gameData = [
@@ -72,7 +109,7 @@ const gameData = [
         minTime: 30,
         maxTime: 60,
         isAvailable: true,
-        description: `Here to Slay is a competitive role-playing fantasy strategy card game that's all about assembling a party of Heroes and slaying monsters (and sometimes sabotaging your friends too) from the creators of Unstable Unicorns.`
+        description: `Here to Slay is a competitive role-playing fantasy strategy card game that's all about assembling a party of Heroes and slaying monsters (and sometimes sabotaging your friends too) from the creators of Unstable Unicorns.`,
     },
     {
         title: `Secret Hitler`,
@@ -82,7 +119,7 @@ const gameData = [
         minTime: 25,
         maxTime: 45,
         isAvailable: true,
-        description: `Secret Hitler is a dramatic game of political intrigue and betrayal set in 1930s Germany. Each player is randomly and secretly assigned to be a liberal or a fascist, and one player is Secret Hitler.`
+        description: `Secret Hitler is a dramatic game of political intrigue and betrayal set in 1930s Germany. Each player is randomly and secretly assigned to be a liberal or a fascist, and one player is Secret Hitler.`,
     },
     {
         title: `Battleship`,
@@ -92,7 +129,7 @@ const gameData = [
         minTime: 25,
         maxTime: 60,
         isAvailable: true,
-        description: `Each player deploys his ships (of lengths varying from 2 to 5 squares) secretly on a square grid. Then each player shoots at the other's grid by calling a location.`
+        description: `Each player deploys his ships (of lengths varying from 2 to 5 squares) secretly on a square grid. Then each player shoots at the other's grid by calling a location.`,
     },
     {
         title: `Risk`,
@@ -102,7 +139,7 @@ const gameData = [
         minTime: 60,
         maxTime: 80,
         isAvailable: true,
-        description: `Possibly the most popular, mass market war game. The goal is conquest of the world.`
+        description: `Possibly the most popular, mass market war game. The goal is conquest of the world.`,
     },
     {
         title: `Dominos`,
@@ -112,7 +149,7 @@ const gameData = [
         minTime: 15,
         maxTime: 30,
         isAvailable: true,
-        description: `The timeless family classic of placing matching tiles`
+        description: `The timeless family classic of placing matching tiles`,
     },
     {
         title: `Coup`,
@@ -122,7 +159,7 @@ const gameData = [
         minTime: 5,
         maxTime: 20,
         isAvailable: true,
-        description: `Bluff (and call bluffs!) to victory in this card game with no third chances. `
+        description: `Bluff (and call bluffs!) to victory in this card game with no third chances. `,
     },
     {
         title: `Codenames`,
@@ -132,7 +169,7 @@ const gameData = [
         minTime: 15,
         maxTime: 30,
         isAvailable: true,
-        description: `Give your team clever one-word clues to help them spot their agents in the field. `
+        description: `Give your team clever one-word clues to help them spot their agents in the field. `,
     },
     {
         title: `Monopoly`,
@@ -142,7 +179,7 @@ const gameData = [
         minTime: 60,
         maxTime: 240,
         isAvailable: true,
-        description: `In this competitive real estate market, there's only one possible outcome: Monopoly!`
+        description: `In this competitive real estate market, there's only one possible outcome: Monopoly!`,
     },
     {
         title: `Telestrations`,
@@ -152,7 +189,7 @@ const gameData = [
         minTime: 30,
         maxTime: 60,
         isAvailable: true,
-        description: `Guess what they drew, then draw what they guessed, and see how funny the changes get.`
+        description: `Guess what they drew, then draw what they guessed, and see how funny the changes get.`,
     },
     {
         title: `Uno`,
@@ -162,7 +199,7 @@ const gameData = [
         minTime: 10,
         maxTime: 30,
         isAvailable: true,
-        description: `Get rid of your cards first, but don't forget to say "UNO!"`
+        description: `Get rid of your cards first, but don't forget to say "UNO!"`,
     },
     {
         title: `Jenga`,
@@ -172,7 +209,7 @@ const gameData = [
         minTime: 5,
         maxTime: 20,
         isAvailable: true,
-        description: `How high can you go before your tower comes crashing down!?`
+        description: `How high can you go before your tower comes crashing down!?`,
     },
     {
         title: `Rummikub`,
@@ -182,7 +219,7 @@ const gameData = [
         minTime: 25,
         maxTime: 30,
         isAvailable: true,
-        description: `Race to play all your tiles by forming runs or sets, even if they're not your own!`
+        description: `Race to play all your tiles by forming runs or sets, even if they're not your own!`,
     },
     {
         title: `Chess`,
@@ -192,7 +229,7 @@ const gameData = [
         minTime: 50,
         maxTime: 120,
         isAvailable: true,
-        description: `Checkmate your opponent in this timeless abstract.`
+        description: `Checkmate your opponent in this timeless abstract.`,
     },
     {
         title: `Checkers`,
@@ -202,7 +239,7 @@ const gameData = [
         minTime: 30,
         maxTime: 60,
         isAvailable: true,
-        description: `Players move pieces diagonally to "jump" opponent pieces 'til one side is eliminated.`
+        description: `Players move pieces diagonally to "jump" opponent pieces 'til one side is eliminated.`,
     },
     {
         title: `Connect Four`,
@@ -212,7 +249,7 @@ const gameData = [
         minTime: 10,
         maxTime: 20,
         isAvailable: true,
-        description: `Take turns dropping pieces to be the first player to connect four in a row!`
+        description: `Take turns dropping pieces to be the first player to connect four in a row!`,
     },
     {
         title: `Clue`,
@@ -222,7 +259,7 @@ const gameData = [
         minTime: 30,
         maxTime: 50,
         isAvailable: true,
-        description: `Catch the culprit of a crime by identifying who did it, with what, and where.`
+        description: `Catch the culprit of a crime by identifying who did it, with what, and where.`,
     },
     {
         title: `Pictionary`,
@@ -232,7 +269,7 @@ const gameData = [
         minTime: 60,
         maxTime: 90,
         isAvailable: true,
-        description: `Guess what you team is drawing so you can Win, Lose, or Draw.`
+        description: `Guess what you team is drawing so you can Win, Lose, or Draw.`,
     },
     {
         title: `Werewolf`,
@@ -242,7 +279,7 @@ const gameData = [
         minTime: 40,
         maxTime: 90,
         isAvailable: true,
-        description: `Suspicious townsfolk try to identify the murderous outsiders hiding in their group.`
+        description: `Suspicious townsfolk try to identify the murderous outsiders hiding in their group.`,
     },
     {
         title: `Exploding Kittens`,
@@ -252,7 +289,7 @@ const gameData = [
         minTime: 10,
         maxTime: 15,
         isAvailable: true,
-        description: `Ask for favors, attack friends, see the future- whatever it takes to avoid exploding!`
+        description: `Ask for favors, attack friends, see the future- whatever it takes to avoid exploding!`,
     },
     {
         title: `Guess Who?`,
@@ -262,7 +299,7 @@ const gameData = [
         minTime: 10,
         maxTime: 20,
         isAvailable: true,
-        description: `Find your opponent's character by narrowing down what his or her features are.`
+        description: `Find your opponent's character by narrowing down what his or her features are.`,
     },
     {
         title: `Labyrinth`,
@@ -272,7 +309,7 @@ const gameData = [
         minTime: 10,
         maxTime: 25,
         isAvailable: true,
-        description: `Hunt for treasure in an ever-changing maze. Will you open a path? Or block a rival?`
+        description: `Hunt for treasure in an ever-changing maze. Will you open a path? Or block a rival?`,
     },
     {
         title: `5 Second Rule`,
@@ -282,7 +319,7 @@ const gameData = [
         minTime: 20,
         maxTime: 30,
         isAvailable: true,
-        description: `Think quickly, while under the pressure of your opponents staring at you waiting!`
+        description: `Think quickly, while under the pressure of your opponents staring at you waiting!`,
     },
     {
         title: `Acquire`,
@@ -292,7 +329,7 @@ const gameData = [
         minTime: 90,
         maxTime: 120,
         isAvailable: true,
-        description: `Invest, divest, and stage hostile takeovers in this classic real estate game. `
+        description: `Invest, divest, and stage hostile takeovers in this classic real estate game. `,
     },
     {
         title: `7 Wonders`,
@@ -302,7 +339,7 @@ const gameData = [
         minTime: 30,
         maxTime: 60,
         isAvailable: true,
-        description: `Draft cards to develop your ancient civilization and build its Wonder of the World. `
+        description: `Draft cards to develop your ancient civilization and build its Wonder of the World. `,
     },
     {
         title: `Flash Point: Fire Rescue`,
@@ -312,7 +349,7 @@ const gameData = [
         minTime: 45,
         maxTime: 60,
         isAvailable: true,
-        description: `Smoke! Fire! Work as a team to save as many as you can from a blazing inferno.`
+        description: `Smoke! Fire! Work as a team to save as many as you can from a blazing inferno.`,
     },
     {
         title: `Zombie Dice`,
@@ -322,7 +359,7 @@ const gameData = [
         minTime: 10,
         maxTime: 20,
         isAvailable: true,
-        description: `Eat as many tasty brains as you dare, without getting shotgunned.`
+        description: `Eat as many tasty brains as you dare, without getting shotgunned.`,
     },
     {
         title: `Yahtzee`,
@@ -332,7 +369,7 @@ const gameData = [
         minTime: 20,
         maxTime: 45,
         isAvailable: true,
-        description: `Yes the dice are fickle, but score your combos strategically to max out on points.`
+        description: `Yes the dice are fickle, but score your combos strategically to max out on points.`,
     },
     {
         title: `Drunk Stoned or Stupid: A Party Game (2014)`,
@@ -342,7 +379,7 @@ const gameData = [
         minTime: 15,
         maxTime: 30,
         isAvailable: true,
-        description: `Name and shame your friends in this game of embarrassing accusations`
+        description: `Name and shame your friends in this game of embarrassing accusations`,
     },
     {
         title: `Vikings`,
@@ -352,7 +389,7 @@ const gameData = [
         minTime: 45,
         maxTime: 90,
         isAvailable: true,
-        description: `Different-colored Vikings have different responsibilities. Which do you need most?`
+        description: `Different-colored Vikings have different responsibilities. Which do you need most?`,
     },
     {
         title: `Ticket to Ride`,
@@ -362,7 +399,7 @@ const gameData = [
         minTime: 30,
         maxTime: 60,
         isAvailable: true,
-        description: `Build your railroad across North America to connect cities and complete tickets.`
+        description: `Build your railroad across North America to connect cities and complete tickets.`,
     },
     {
         title: `Sushi Roll`,
@@ -372,30 +409,51 @@ const gameData = [
         minTime: 10,
         maxTime: 20,
         isAvailable: true,
-        description: `Draft the most valuable collection of sushi dice as the conveyor belt rolls by.`
+        description: `Draft the most valuable collection of sushi dice as the conveyor belt rolls by.`,
     },
 ];
 
-const shopData = [
+const reviewData = [
     {
-        name: `The Adventures Guild`
+        rating: 3,
+        text: `Really good game!`,
+        UserId: 1,
+        GameId: 1,
     },
     {
-        name: `Games On Tap`
+        rating: 2,
+        text: `Boooring`,
+        UserId: 2,
+        GameId: 2,
     },
     {
-        name: `The Round Table`
+        rating: 1,
+        text: `Worst game ever!`,
+        UserId: 3,
+        GameId: 3,
+    },
+    {
+        rating: 5,
+        text: `Instant favorite!`,
+        UserId: 4,
+        GameId: 4,
     },
 ];
 
 //Seeds function
 const seedMe = async () => {
 	await sequelize.sync({force: true});
-	await Game.bulkCreate(gameData);
-    await GameCategory.bulkCreate(categoryData);
-    await Shop.bulkCreate(shopData);
+    const dbShops = await Shop.bulkCreate(shopData);
+    const dbGames = await Game.bulkCreate(gameData);
+    const dbCategories = await Category.bulkCreate(categoryData);
+    const dbUsers = await User.bulkCreate(userData);
+    await Review.bulkCreate(reviewData);
+    await dbUsers[0].addGames([1, 2]);
+    await dbGames[0].addCategories([8, 12, 14, 15]);
+    await dbGames[0].addShops([1, 2, 3])
 	console.log(`Seeding completed :)`);
 	process.exit(0)
+    
 };
 
 //call the function

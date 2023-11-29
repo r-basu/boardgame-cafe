@@ -1,0 +1,53 @@
+<div class="review-card">
+  <div class="review-card-header col-md-10">
+    <h1>
+      &#127869 Welcome {{user_name}}
+    </h1>
+  </div>
+  {{#each reviews as |review|}}
+  <div class="review col-md-5">
+    <p>
+      {{review.id}}.
+      {{review.review_name}}
+    </p>
+  </div>
+  <div class="col-md-7">
+    <p></p>
+  </div>
+  {{/each}}
+</div>
+
+<div class="review-body">
+  <h2>Title:
+    {{game_title}}
+  </h2>
+  <container>
+    <a>{{game_title}}</a>
+    <img src="{{game_image_url}}" alt="Board Game Image">
+    <p class="description">Game Description</p>
+  </container>
+  <form class="edit-review-form">
+    <label for="review_name">
+      Game Name:
+    </label>
+    <br />
+    <textarea id="game_name" name="game_name" rows="2" cols="30">
+      {{game_name}}
+    </textarea>
+    <br />
+    <label for="description">
+      Description:
+    </label>
+    <br />
+    <textarea id="description" name="description" rows="5" cols="30">
+      {{description}}
+    </textarea>
+    <br />
+    <button type="submit" value="Submit">
+      Submit
+    </button>
+    <button type="edit" value:"Edit">
+      Edit
+    </button>
+  </form>
+</div>

@@ -13,7 +13,7 @@ Review.init({
         allowNull: false,
         defaultValue: DataTypes.NOW
     },
-    review: {
+    text: {
         type: DataTypes.TEXT,
         allowNull: false
     }

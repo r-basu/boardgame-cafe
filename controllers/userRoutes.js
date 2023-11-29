@@ -67,4 +67,20 @@ router.get(`/`, (req, res) => {
     }) 
 })
 
+// Find One User
+router.get("/:id", (req, res) => {
+    User.findByPk(req.params.id, {
+      include: [Game]
+    }).then(dbUser => {
+      if (!dbUser) {
+        res.status(404).json({ msg: "no such user!" })
+      } else {
+        res.json(dbUser)
+      }
+    }).catch(err => {
+      res.status(500).json({ msg: "oh no!", err })
+    })
+  })
+  
+
 module.exports = router;

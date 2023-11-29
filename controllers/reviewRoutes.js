@@ -15,9 +15,9 @@ router.get("/", (req, res) => {
     });
 });
 
-// Find One Review by UserID
+// Find All Reviews by Single UserID
 router.get("/:userId", (req, res) => {
-  Review.findAll({ where: { UsgerId: req.params.userId } })
+  Review.findAll({ where: { UserId: req.params.userId } })
     .then(dbReviews => {
       if (!dbReviews) {
         res.status(404).json({ msg: "no such reviews" })
@@ -28,5 +28,11 @@ router.get("/:userId", (req, res) => {
       res.status(500).json({ msg: "oh no!", err })
     })
 })
+
+// Create Review
+
+// Edit Review
+
+// Delete Review
 
 module.exports = router;

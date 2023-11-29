@@ -436,7 +436,7 @@ const reviewData = [
         rating: 5,
         text: `Instant favorite!`,
         UserId: 4,
-        GameId: 4,
+        GameId: 3,
     },
 ];
 

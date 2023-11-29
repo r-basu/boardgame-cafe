@@ -54,6 +54,19 @@ router.post("/:userId/addCurrentGame/:gameId",(req,res)=>{
   })
 })
 
+// Show all users
+router.get(`/`, (req, res) => {
+    User.findAll().then((dbUsers) => {
+        res.json(dbUsers);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({
+            msg: `Something went wrong :(`,
+            err
+        })
+    }) 
+})
+
 // Find One User
 router.get("/:id", (req, res) => {
     User.findByPk(req.params.id, {
@@ -67,7 +80,7 @@ router.get("/:id", (req, res) => {
     }).catch(err => {
       res.status(500).json({ msg: "oh no!", err })
     })
-  })
+});
   
 
 module.exports = router;

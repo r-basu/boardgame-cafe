@@ -97,6 +97,27 @@ const categoryData = [
     },
     {
         name: `Deduction`
+    },
+    {
+        name: `Nautical`
+    },
+    {
+        name: `Wargame`
+    },
+    {
+        name: `Word Game`
+    },
+    {
+        name: `Negotiation`
+    },
+    {
+        name: `Roll/Spin & Move`
+    },
+    {
+        name: `Drawing`
+    },
+    {
+        name: `Role Playing`
     }
 ];
 
@@ -449,7 +470,25 @@ const seedMe = async () => {
     const dbUsers = await User.bulkCreate(userData);
     await Review.bulkCreate(reviewData);
     await dbUsers[0].addGames([1, 2]);
+    // Add Categories
     await dbGames[0].addCategories([8, 12, 14, 15]);
+    await dbGames[1].addCategories([11, 19]);
+    await dbGames[2].addCategories([20, 21]);
+    await dbGames[3].addCategories([21]);
+    await dbGames[4].addCategories([1]);
+    await dbGames[5].addCategories([11, 12, 19]);
+    await dbGames[6].addCategories([19, 10, 22]);
+    await dbGames[7].addCategories([16, 23]);
+    await dbGames[8].addCategories([10]);
+    await dbGames[9].addCategories([12]);
+    await dbGames[10].addCategories([2, 10]);
+    await dbGames[11].addCategories([1]);
+    await dbGames[12].addCategories([1]);
+    await dbGames[13].addCategories([1]);
+    await dbGames[14].addCategories([1]);
+    await dbGames[15].addCategories([19, 24]);
+    await dbGames[16].addCategories([24, 25]);
+    await dbGames[17].addCategories([11, 10, 23, 26]);
     await dbGames[0].addShops([1, 2, 3])
 	console.log(`Seeding completed :)`);
 	process.exit(0)

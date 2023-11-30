@@ -16,14 +16,14 @@ fetch('/api/games')
     });
 
 // fetch categories data
-fetch('/api/games')
+fetch('/api/games/categories')
     .then(response => response.json())
     .then(data => {
-        boardgamesData = data
-        console.log(`Boardgame data retrieved`);
+        categoriesData = data
+        console.log(`Categories data retrieved`);
     })
     .catch(error => {
-        console.error('Error trying to fetch boardgame data', error);
+        console.error('Error trying to fetch Categories data', error);
     });
 
 

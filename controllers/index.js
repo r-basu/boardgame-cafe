@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { User, Game, Review } = require("../models")
+const { User, Game, Review, Category } = require("../models")
 
 
 const gameRoutes = require("./gameRoutes");
@@ -31,10 +31,24 @@ router.get("/login", (req, res) => {
   }
 })
 
-router.get("/boardgames", (req, res) => {
-  res.render("boardgames")
-  console.log("Boardgames")
-  // res.status(200).json("Youre on boardgames")
+router.get("/boardgames", async (req, res) => {
+  try{
+    // get data, delete all the extra sequelize info and put it as a single object
+    const boardgamesData = await Game.findAll();
+    const categoriesData = await Category.findAll();
+    // const boardgames = boardgamesData.get({ plain : true })
+    // const categories = categoriesData.get({ plain : true })
+
+    const gamesPageData = {
+      boardgames: boardgamesData,
+      categories: categoriesData
+    }; 
+    res.render("boardgames", gamesPageData)
+    console.log(gamesPageData)     
+  } 
+  catch {
+    res.status(500).json(err);
+  };
 })
 
 router.get("/profile", (req, res) => {

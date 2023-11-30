@@ -15,6 +15,16 @@ router.get("/", (req, res) => {
     });
 });
 
+// Find all the game categories
+router.get("/categories", (req, res) => {
+  Category.findAll()
+    .then((dbCategories) => {
+      res.json(dbCategories);
+    })
+    .catch((err) => {
+      res.status(500).json({ msg: "oh no!", err });
+    });
+});
 
 //Find One Game
 router.get("/:id", (req, res) => {
@@ -30,5 +40,7 @@ router.get("/:id", (req, res) => {
     res.status(500).json({ msg: "oh no!", err })
   })
 })
+
+
 
 module.exports = router;

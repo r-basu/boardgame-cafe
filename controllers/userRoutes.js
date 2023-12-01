@@ -40,13 +40,15 @@ router.post("/login", (req, res) => {
                     username: foundUser.username
                 }
                 res.json(foundUser)
+                res.json(req.session)
             }
         }
     })
 })
 
 // Add Current Game
-router.post("/:userId/addCurrentGame/:gameId",(req,res)=>{
+router.post("/addCurrentGame/:gameId",(req,res)=>{
+    if (!req.session.user)
   User.findByPk(req.params.userId).then(dbUser=>{
     dbUser.addGame(req.params.gameId).then(data=>{
         res.json(data)

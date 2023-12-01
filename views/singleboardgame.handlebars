@@ -1,10 +1,10 @@
 <div id="gameAvailable">
-    <h2>{{Game.title}}</h2>
-    <p>Game Availability:</p>
+    <h2 class="title-gap">Game Title{{Game.title}}</h2>
+    <p class="avail-gap">Game Availability:{{isAvailable}}</p>
 </div>
 
 <section class="gameInfo">
-  <img src="{{game_image_url}}" alt="Board Game Image">
+  <img id="gameImage" src="{{game_image_url}}" alt="Board Game Image">
   <container id="gameName">
     <div class="rating">
       <input type="radio" id="star5" name="rating" value="5">

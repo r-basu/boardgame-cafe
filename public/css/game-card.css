@@ -1,0 +1,28 @@
+.game-card {
+    margin: 20px;
+    border: 7px double darkblue;
+    border-radius: 10px;
+    background-color: lightblue;
+    color: darkblue;
+}   
+
+.game-card header {
+    color: lightblue;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    background-color: grey;
+    padding: 0.625rem;
+    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}
+
+.card-container {
+    flex: 4;
+    background-color: #fff;
+    padding: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+  

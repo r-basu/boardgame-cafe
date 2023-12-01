@@ -18,29 +18,20 @@
       <input type="radio" id="star1" name="rating" value="1">
       <label for="star1"></label>
     </div>
-    <button id="reviewPage">Reviews</button>
-    <p id="description">Game Description</p>
+    <button class="button" id="reviewPage">Reviews</button>
+    <h3 id="description">Game Description<h3>
+    <p>{{description}}</p>
   </container>
 </section>
 
-<section>
-  <container>
-    <h3>Stats for {{game_title}}</h3>
-      <div id="lenght">
-        <p>Game Duration {{game_lenght}}</p>
-      </div>
-      <div id="numPlayer">
-        <p>Amount of Players {{min_player}} {{max_player}}</p>
-      </div>
-      <div id="playerAge">
-        <p>Suitable Ages {{min_age}} {{max_age}}</p>
-      </div>
-      <div id="category">
-        <p>Game Categories {{game_category}}</p>
-      </div>
-      <div id="shop">
-        <p>Available to purchase at {{game_shop}}</p>
-      </div>
+<section class="gameStats">
+  <div id="gameDetail">
+    <h3 class="title-gap">Stats for {{title}}</h3>
+    <p class="lenght">Game Duration {{minTime}}-{{maxTime}}</p>
+    <p class="numPlayer">Amount of Players {{minPlayers}}-{{maxPlayers}}</p>
+    <p class="playerAge">Suitable Ages {{minAge}}</p>
+    <p class="category">Game Categories {{categoryData.name}}</p>
+    <p class="shop">Available to purchase at {{shopData.name}}</p>
     <button id="claimButton">Claim</button> <!-- Add the claim button here -->
-  </container>
+  </div>
 </section>

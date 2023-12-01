@@ -61,6 +61,27 @@ router.get("/profile", (req, res) => {
   // res.status(200).json("Youre on profile")
 })
 
+// Render the individual boardgame page
+router.get("/game/:id", async (req, res) => {
+  try{
+    // get the respective boardgame data, delete all the extra sequelize info and put it as a single object
+    const boardgameData = await Game.findByPk(req.params.id,{
+      include: [Review, Category]
+    });
+    if (!boardgameData){
+      res.status(404).json({message: 'No boardgame with this id!'});
+      return;
+    };
+    const boardgame = boardgameData.get({ plain : true })
+    console.log(boardgame);
+    res.render("singleboardgame", boardgame)   
+  } 
+  catch (err){
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
+
 router.get("/reviews", (req, res) => {
   res.render("reviews")
   console.log("reviews")

@@ -375,7 +375,7 @@ const gameData = [
     {
         title: `Zombie Dice`,
         minPlayers: 2,
-        maxPlayers: 99,
+        maxPlayers: 15,
         minAge: 10,
         minTime: 10,
         maxTime: 20,

@@ -34,18 +34,58 @@ router.get("/login", (req, res) => {
 // Render games page
 router.get("/boardgames", async (req, res) => {
   try{
-    // get data, delete all the extra sequelize info and put it as a single object
+    // get boardgames & categories data, delete all the extra sequelize info and put it as a single object
     const boardgamesData = await Game.findAll();
     const categoriesData = await Category.findAll();
     const boardgames = boardgamesData.map((boardgames) => boardgames.get({ plain : true }))
     const categories = categoriesData.map((categories) => categories.get({ plain : true }))
 
-    // const dishes = dishData.map((dish) => dish.get({ plain: true }));
-    console.log(boardgames);
+    // add the ages
+    const ages = [5, 6, 7, 8, 9, 10, 11, 12, 14, 17];
+    let minAges = [];
+    for (let i = 0; i < ages.length; i++){
+      minAges.push({
+        index: i + 1,
+        age: ages[i]
+      })
+    };
+
+    // add the players
+    const players = [];
+    const minPlayers = 1;
+    let maxPlayers = 2;
+    for (let i = 0; i < boardgames.length; i ++){
+      // get the max number of players that any boardgame has
+      if (boardgames[i].maxPlayers > maxPlayers){
+        maxPlayers = boardgames[i].maxPlayers
+      }
+    };
+    for (let i = 1; i <= maxPlayers; i++){
+      players.push({
+        index: i,
+        player: i
+      })
+      console.log(players);
+    }
+
+    // add the game duration
+    const times = [5, 10, 15, 20, 30, 60, 90, 120, 150, 180];
+    let gameDuration = [];
+    for (let i = 0; i < times.length; i++){
+      gameDuration.push({
+        index: i + 1,
+        time: times[i]
+      })
+    };
+
     const gamesPageData = {
       boardgames: boardgames,
-      categories: categories
+      categories: categories,
+      minAges: minAges,
+      players: players,
+      duration: gameDuration
     }; 
+
     res.render("boardgames", gamesPageData)
     console.log(gamesPageData)     
   } 

@@ -29,7 +29,7 @@
 
 #rating {
     display: inline-block;
-    direction: rtl;
+    direction: ltr; /*Come back to fix rating direction*/
 }
 
 .rating input {
@@ -47,5 +47,30 @@
 .rating input:checked ~ label {
     color: #ffcc00;
   }
-  
-  
+
+#reviewPage {
+    margin-top: 50px;
+    margin-left: -115px;
+}
+
+.button#reviewPage {
+    width: 100px;
+    height: 40px;
+    font-size: medium;
+}
+
+#gameDetail {
+display: flex;
+flex-direction: column;
+margin-top: 50px;
+padding-top: 50px;
+background-color: rgb(135, 235, 185)
+}
+
+.length,
+.numPlayer,
+.playerAge,
+.category,
+.shop {
+  margin-bottom: 20px;
+}

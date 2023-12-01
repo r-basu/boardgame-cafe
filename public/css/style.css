@@ -1,0 +1,7 @@
+#gameAvailable {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: rgb(19, 139, 93);
+}

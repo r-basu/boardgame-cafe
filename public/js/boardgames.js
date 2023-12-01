@@ -31,5 +31,11 @@ fetch('/api/games/categories')
         console.error('Error trying to fetch Categories data', error);
     });
 
+const gameSeachForm = document.getElementById(`gameSeachForm`);
+gameSeachForm.addEventListener(`submit`, function (event) {
+    // prevent default behavior
+    event.preventDefault();
+    console.log(`niceeee`);
+})
 
 

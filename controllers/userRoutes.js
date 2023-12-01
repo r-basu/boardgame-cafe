@@ -23,36 +23,103 @@ router.post("/", (req, res) => {
 
 // Login
 router.post("/login", (req, res) => {
-    //1. find the user who is trying to login
+    //TODO: ensure user isnt logged in
     User.findOne({
         where: {
             username: req.body.username
         }
     }).then(foundUser => {
         if (!foundUser) {
-            res.status(401).json({ msg: "Invalid username/password" })
-        } else {
-            if (!bcrypt.compareSync(req.body.password, foundUser.password)) {
-                res.status(401).json({ msg: "Invalid username/password" })
-            } else {
-                req.session.user = {
-                    id: foundUser.id,
-                    username: foundUser.username
-                }
-                res.json(foundUser)
-            }
+            return res.status(401).json({
+                msg: "Invalid login credentials"
+            })
         }
+        else if (!bcrypt.compareSync(req.body.password, foundUser.password)) {
+            return res.status(401).json({
+                msg: "Invalid login credentials"
+            })
+        }
+        req.session.user = {
+            id: foundUser.id,
+            username: foundUser.username
+        }
+        res.json(foundUser)
+    }).catch(err => {
+        res.status(500).json({ msg: "womp womp womp", err })
     })
 })
 
+
 // Add Current Game
-router.post("/:userId/addCurrentGame/:gameId",(req,res)=>{
-  User.findByPk(req.params.userId).then(dbUser=>{
-    dbUser.addGame(req.params.gameId).then(data=>{
-        res.json(data)
-    })
-  })
+//PROTECTED ROUTE
+router.put("/addCurrentGame/:gameId", (req, res) => {
+    if (!req.session.user) {
+        return res.status(401).json({
+            msg: "Please login to claim a game"
+        })
+    } else {
+        User.findByPk(req.session.user.id, {
+            include: [Game]
+        }).then(dbUser => {
+            if (!dbUser.currentGame === null) {
+                res.status(401).json({
+                    msg: "Please unclaim game first"
+                })
+            } else {
+                dbUser.update({
+                    currentGame: req.params.gameId
+                })
+                Game.findByPk(req.params.gameId).then(dbGame => {
+                    dbGame.update({
+                        isAvailable: false
+                    })
+                })
+                // TODO: LOOK INTO HOW TO AVOID DUPLICATING ENTRY CRASH ERROR IF TRYING TO CLAIM GAME
+                // if (!dbUser.Games.id === req.params.gameId) {
+                dbUser.addGame(req.params.gameId)
+                res.status(200).json({
+                    msg: "Game successfully claimed"
+                })
+                // }
+            }
+
+        })
+    }
 })
+
+// Delete Current Game
+//PROTECTED ROUTE
+router.put("/deleteCurrentGame/:gameId", (req, res) => {
+    if (!req.session.user) {
+        return res.status(401).json({
+            msg: "Please login to unclaim a game"
+        })
+    } else {
+        User.findByPk(req.session.user.id, {
+            include: [Game]
+        }).then(dbUser => {
+            if (dbUser.currentGame === null) {
+                res.status(401).json({
+                    msg: "Please claim game first"
+                })
+            } else {
+                dbUser.update({
+                    currentGame: null
+                })
+                Game.findByPk(req.params.gameId).then(dbGame => {
+                    dbGame.update({
+                        isAvailable: true
+                    })
+                })
+                res.status(200).json({
+                    msg: "Game successfully unclaimed"
+                })
+            }
+
+        })
+    }
+})
+
 
 // Show all users
 router.get(`/`, (req, res) => {
@@ -64,23 +131,23 @@ router.get(`/`, (req, res) => {
             msg: `Something went wrong :(`,
             err
         })
-    }) 
+    })
 })
 
 // Find One User
 router.get("/:id", (req, res) => {
     User.findByPk(req.params.id, {
-      include: [Game, Review]
+        include: [Game, Review]
     }).then(dbUser => {
-      if (!dbUser) {
-        res.status(404).json({ msg: "no such user!" })
-      } else {
-        res.json(dbUser)
-      }
+        if (!dbUser) {
+            res.status(404).json({ msg: "no such user!" })
+        } else {
+            res.json(dbUser)
+        }
     }).catch(err => {
-      res.status(500).json({ msg: "oh no!", err })
+        res.status(500).json({ msg: "oh no!", err })
     })
 });
-  
+
 
 module.exports = router;

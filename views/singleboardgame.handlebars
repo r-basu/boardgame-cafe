@@ -1,28 +1,37 @@
-{{!< layout}}
-<div>
-  {{body}}
-  <a>Login</a>
-  <h1>BoardGame Form</h1>
-  <a>Games Page</a>
-</div>
-
-<div class="gameAvailable">
-    <h2>{{Game.title}}</h2>
-    <button class="claimButton">Claim</button> <!-- Add the claim button here -->
+<div id="gameAvailable">
+    <h2 class="title-gap">Game Title{{Game.title}}</h2>
+    <p class="avail-gap">Game Availability:{{isAvailable}}</p>
 </div>
 
 <section class="gameInfo">
-    <container class="gameName">
-    <a>{{game_title}}</a>
-    <img src="{{game_image_url}}" alt="Board Game Image">
-    <p class="description">Game Description</p>
-    </container>
-    <div>
-    <h3>Stats for {{game_title}}</h3>
-    <p class="lenght">Game Duration {{game_lenght}}</p>
-    <p class="numPlayer">Amount of Players {{min_player}} {{max_player}}</p>
-    <p class="playerAge">Suitable Ages {{min_age}} {{max_age}}</p>
-    <p class="category">Game Categories {{game_category}}</p>
-    <p class="shop">Available to purchase at {{game_shop}}</p>
+  <img id="gameImage" src="{{game_image_url}}" alt="Board Game Image">
+  <container id="gameName">
+    <div class="rating">
+      <input type="radio" id="star5" name="rating" value="5">
+      <label for="star5"></label>
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star4"></label>
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star3"></label>
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star2"></label>
+      <input type="radio" id="star1" name="rating" value="1">
+      <label for="star1"></label>
     </div>
+    <button class="button" id="reviewPage">Reviews</button>
+    <h3 id="description">Game Description<h3>
+    <p>{{description}}</p>
+  </container>
+</section>
+
+<section class="gameStats">
+  <div id="gameDetail">
+    <h3 class="title-gap">Stats for {{title}}</h3>
+    <p class="lenght">Game Duration {{minTime}}-{{maxTime}}</p>
+    <p class="numPlayer">Amount of Players {{minPlayers}}-{{maxPlayers}}</p>
+    <p class="playerAge">Suitable Ages {{minAge}}</p>
+    <p class="category">Game Categories {{categoryData.name}}</p>
+    <p class="shop">Available to purchase at {{shopData.name}}</p>
+    <button id="claimButton">Claim</button> <!-- Add the claim button here -->
+  </div>
 </section>

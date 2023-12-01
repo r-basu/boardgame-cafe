@@ -1,28 +1,22 @@
 {{!< layout}}
-<div>
-  {{body}}
-  <a>Login</a>
-  <h1>BoardGame Form</h1>
-  <a>Games Page</a>
-</div>
-
-<div class="gameAvailable">
-    <h2>{{Game.title}}</h2>
-    <button class="claimButton">Claim</button> <!-- Add the claim button here -->
+<div id="gameAvailable">
+    <h2>Game Title: {{Game.title}}</h2>
+    <p>Game Availability:</p>
 </div>
 
 <section class="gameInfo">
-    <container class="gameName">
+    <container id="gameName">
     <a>{{game_title}}</a>
     <img src="{{game_image_url}}" alt="Board Game Image">
-    <p class="description">Game Description</p>
+    <p id="description">Game Description</p>
     </container>
     <div>
     <h3>Stats for {{game_title}}</h3>
-    <p class="lenght">Game Duration {{game_lenght}}</p>
-    <p class="numPlayer">Amount of Players {{min_player}} {{max_player}}</p>
-    <p class="playerAge">Suitable Ages {{min_age}} {{max_age}}</p>
-    <p class="category">Game Categories {{game_category}}</p>
-    <p class="shop">Available to purchase at {{game_shop}}</p>
+    <button id="claimButton">Claim</button> <!-- Add the claim button here -->
+    <p id="lenght">Game Duration {{game_lenght}}</p>
+    <p id="numPlayer">Amount of Players {{min_player}} {{max_player}}</p>
+    <p id="playerAge">Suitable Ages {{min_age}} {{max_age}}</p>
+    <p id="category">Game Categories {{game_category}}</p>
+    <p id="shop">Available to purchase at {{game_shop}}</p>
     </div>
 </section>

@@ -12,26 +12,25 @@
         </select>
       </div>
 
-      {{!-- <label for="age">Age:</label>
+      <label for="age">Age:</label>
       <div class="input-field col s12">
         <select>
-        <option value="" disabled selected>Choose your option</option>
-        {{#each ages}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
+          <option value="" disabled selected>Choose your option</option>
+          {{#each minAges}}
+            <option value="{{this.index}}">{{this.age}}</option>
+          {{/each}}
         </select>
-        <label>Materialize Select</label>
-      </div> --}}
+      </div>
 
-      {{!-- <label for="players">Players:</label>
+      <label for="players">Players:</label>
       <div class="input-field col s12">
         <select>
-        {{#each players}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
+          <option value="" disabled selected>Choose your option</option>
+          {{#each players}}
+            <option value="{{this.index}}">{{this.player}}</option>
+          {{/each}}
         </select>
-        <label>Materialize Select</label>
-      </div> --}}
+      </div>
 
       <label for="categories">Categories:</label>
       <div class="input-field col s12">
@@ -42,15 +41,15 @@
         </select>
       </div>
 
-      {{!-- <label for="duration">Game Duration:</label>
+      <label for="duration">Game Duration:</label>
       <div class="input-field col s12">
         <select>
-        {{#each durations}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
+          <option value="" disabled selected>Choose your option</option>
+          {{#each duration}}
+            <option value="{{this.index}}">{{this.time}}</option>
+          {{/each}}
         </select>
-        <label>Materialize Select</label>
-      </div> --}}
+      </div>
 
       <button type="submit">Game Search</button>
     </form>

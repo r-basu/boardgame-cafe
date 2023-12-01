@@ -31,22 +31,26 @@ router.get("/login", (req, res) => {
   }
 })
 
+// Render games page
 router.get("/boardgames", async (req, res) => {
   try{
     // get data, delete all the extra sequelize info and put it as a single object
     const boardgamesData = await Game.findAll();
     const categoriesData = await Category.findAll();
-    // const boardgames = boardgamesData.get({ plain : true })
-    // const categories = categoriesData.get({ plain : true })
+    const boardgames = boardgamesData.map((boardgames) => boardgames.get({ plain : true }))
+    const categories = categoriesData.map((categories) => categories.get({ plain : true }))
 
+    // const dishes = dishData.map((dish) => dish.get({ plain: true }));
+    console.log(boardgames);
     const gamesPageData = {
-      boardgames: boardgamesData,
-      categories: categoriesData
+      boardgames: boardgames,
+      categories: categories
     }; 
     res.render("boardgames", gamesPageData)
     console.log(gamesPageData)     
   } 
-  catch {
+  catch (err){
+    console.log(err);
     res.status(500).json(err);
   };
 })

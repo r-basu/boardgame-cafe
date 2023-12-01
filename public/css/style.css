@@ -78,3 +78,7 @@ background-color: rgb(135, 235, 185)
 .intro {
   margin-top: 90px;
 }
+
+.navbar {
+  color: darkblue;
+}

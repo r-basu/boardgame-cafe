@@ -1,14 +1,15 @@
 {{!< layout}}
 <div id="gameAvailable">
-    <h2>Game Title: {{Game.title}}</h2>
+    <img src="{{game_image_url}}" alt="Board Game Image">
+    <h2>{{Game.title}}</h2>
     <p>Game Availability:</p>
+    <p id="description">Game Description</p>
 </div>
 
 <section class="gameInfo">
     <container id="gameName">
     <a>{{game_title}}</a>
-    <img src="{{game_image_url}}" alt="Board Game Image">
-    <p id="description">Game Description</p>
+
     </container>
     <div>
     <h3>Stats for {{game_title}}</h3>

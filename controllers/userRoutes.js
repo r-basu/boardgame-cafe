@@ -76,9 +76,10 @@ router.put("/addCurrentGame/:gameId", (req, res) => {
                 })
                 // TODO: LOOK INTO HOW TO AVOID DUPLICATING ENTRY CRASH ERROR IF TRYING TO CLAIM GAME
                 // if (!dbUser.Games.id === req.params.gameId) {
-                    dbUser.addGame(req.params.gameId).then(data => {
-                        res.json(data)
-                    })
+                dbUser.addGame(req.params.gameId)
+                res.status(200).json({
+                    msg: "Game successfully claimed"
+                })
                 // }
             }
 
@@ -110,8 +111,11 @@ router.put("/deleteCurrentGame/:gameId", (req, res) => {
                         isAvailable: true
                     })
                 })
+                res.status(200).json({
+                    msg: "Game successfully unclaimed"
+                })
             }
-            
+
         })
     }
 })

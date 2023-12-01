@@ -4,24 +4,56 @@
     <h2>Complete form for game suggestion</h2>
     <form id="gameSeachForm">
       <label for="title">Title:</label>
-      {{!-- <input type="text" id="title" name="title" placeholder="Enter game title"> --}}
+      <div class="input-field col s12">
+        <select>
+        <option value="" disabled selected>Choose your option</option>
+        {{#each titles}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+        </select>
+        <label>Materialize Select</label>
+      </div>
 
       <label for="age">Age:</label>
-      {{!-- <input type="text" id="age" name="age" placeholder="Enter age"> --}}
+      <div class="input-field col s12">
+        <select>
+        <option value="" disabled selected>Choose your option</option>
+        {{#each ages}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+        </select>
+        <label>Materialize Select</label>
+      </div>
 
       <label for="players">Players:</label>
-      {{!-- <input type="text" id="players" name="players" placeholder="Enter number of players"> --}}
+      <div class="input-field col s12">
+        <select>
+        {{#each players}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+        </select>
+        <label>Materialize Select</label>
+      </div>
 
       <label for="categories">Categories:</label>
-      <select id="categories" name="categories">
-      {{#each categories}}
-      <option value="{{this}}">{{this}}</option>
-      {{/each}}
-      </select>
-      <input type="text" id="categories" name="categories" placeholder="Enter categories">
+        <div class="input-field col s12">
+          <select multiple id="categories" name="categories">
+          {{#each categories}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+          </select>
+          <label>Materialize Multiple Select</label>
+        </div>
 
       <label for="duration">Game Duration:</label>
-      <input type="text" id="duration" name="duration" placeholder="Enter game duration">
+        <div class="input-field col s12">
+        <select>
+        {{#each durations}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+        </select>
+        <label>Materialize Select</label>
+        </div>
 
       <button type="submit">Game Search</button>
     </form>

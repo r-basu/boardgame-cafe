@@ -1,23 +1,46 @@
-{{!< layout}}
 <div id="gameAvailable">
-    <img src="{{game_image_url}}" alt="Board Game Image">
     <h2>{{Game.title}}</h2>
     <p>Game Availability:</p>
-    <p id="description">Game Description</p>
 </div>
 
 <section class="gameInfo">
-    <container id="gameName">
-    <a>{{game_title}}</a>
-
-    <div>
-    <h3>Stats for {{game_title}}</h3>
-    <button id="claimButton">Claim</button> <!-- Add the claim button here -->
-    <p id="lenght">Game Duration {{game_lenght}}</p>
-    <p id="numPlayer">Amount of Players {{min_player}} {{max_player}}</p>
-    <p id="playerAge">Suitable Ages {{min_age}} {{max_age}}</p>
-    <p id="category">Game Categories {{game_category}}</p>
-    <p id="shop">Available to purchase at {{game_shop}}</p>
+  <img src="{{game_image_url}}" alt="Board Game Image">
+  <container id="gameName">
+    <div class="rating">
+      <input type="radio" id="star5" name="rating" value="5">
+      <label for="star5"></label>
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star4"></label>
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star3"></label>
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star2"></label>
+      <input type="radio" id="star1" name="rating" value="1">
+      <label for="star1"></label>
     </div>
-    </container>
+    <button id="reviewPage">Reviews</button>
+    <p id="description">Game Description</p>
+  </container>
+</section>
+
+<section>
+  <container>
+    <h3>Stats for {{game_title}}</h3>
+      <div id="lenght">
+        <p>Game Duration {{game_lenght}}</p>
+      </div>
+      <div id="numPlayer">
+        <p>Amount of Players {{min_player}} {{max_player}}</p>
+      </div>
+      <div id="playerAge">
+        <p>Suitable Ages {{min_age}} {{max_age}}</p>
+      </div>
+      <div id="category">
+        <p>Game Categories {{game_category}}</p>
+      </div>
+      <div id="shop">
+        <p>Available to purchase at {{game_shop}}</p>
+      </div>
+    <button id="claimButton">Claim</button> <!-- Add the claim button here -->
+  </container>
 </section>

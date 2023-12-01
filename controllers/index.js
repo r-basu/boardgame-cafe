@@ -41,7 +41,6 @@ router.get("/boardgames", async (req, res) => {
     const categories = categoriesData.map((categories) => categories.get({ plain : true }))
 
     // const dishes = dishData.map((dish) => dish.get({ plain: true }));
-    console.log(boardgames);
     const gamesPageData = {
       boardgames: boardgames,
       categories: categories

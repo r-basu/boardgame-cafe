@@ -7,13 +7,17 @@
   <title>Boardgame Cafe</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/materialize/css/materialize.min.css" media="screen,projection">
-  <link rel="stylesheet" href="/css/homepgstyle.css">
-  <link rel="stylesheet" href="/css/singlebgstyle.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .navbar-dark .navbar-nav .nav-link {
+      color: rgb(49, 0, 128);
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -23,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/login">login</a>
+              <a class="nav-link active" aria-current="page" href="/login">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/boardgames"> BoardGames</a>

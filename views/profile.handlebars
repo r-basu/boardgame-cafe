@@ -1,12 +1,11 @@
-
 <div class="profilePage">
     <form>
     <label for="username">Username:</label>
-    <input type="text" id="username" value="{{user.username}}">
+    <input type="text" id="username" value="{{username}}">
     </form>
     <form>
     <label for="currentGame">Current Game:</label>
-    <input type="text" id="currentGame" value="{{game.gamename}}">
+    <input type="text" id="currentGame" value="{{currentGameTitle}}">
     </form>
 </div>
 
@@ -15,7 +14,7 @@
     <div class="game-container">
         <div class="game-card" id="currentGame">
             <div>
-                <p class="game-title">Current Game{{gamename}}</p>
+                <p class="game-title">Current Game: {{currentGameTitle}}</p>
                 <img src="game-image.jpg" alt="Game Image">
                 <a href="/title/{{id}}"></a>
             </div>
@@ -63,3 +62,7 @@
         </div>
     </div>
 </container>
+
+<button id="unclaim-btn">Unclaim Current Game</button>
+<script src="/js/profile.js"></script>
+

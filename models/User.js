@@ -20,6 +20,10 @@ User.init({
     currentGame: {
         type: DataTypes.INTEGER,
         allowNull: true,
+    },
+    currentGameTitle: {
+        type: DataTypes.STRING,
+        allowNull: true,
     }
 }, {
     sequelize,

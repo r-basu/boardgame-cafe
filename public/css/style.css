@@ -88,3 +88,16 @@ background-color: rgb(135, 235, 185)
   height: auto; /* Maintain the aspect ratio */
   margin-right: 0px; 
 }
+
+.login-heading,
+.gamepage-heading {
+  margin-top: 100px;
+}
+
+.profilePage {
+display: flex;
+flex-direction: column;
+margin-top: 100px;
+padding-top: 50px;
+background-color: rgb(135, 235, 185)
+}

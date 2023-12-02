@@ -149,5 +149,20 @@ router.get("/:id", (req, res) => {
     })
 });
 
+// Find Session User
+router.get("/session/:id", (req, res) => {
+    User.findByPk(req.session.user.id, {
+        include: [Game, Review]
+    }).then(dbUser => {
+        if (!dbUser) {
+            res.status(404).json({ msg: "no such user!" })
+        } else {
+            res.json(dbUser)
+        }
+    }).catch(err => {
+        res.status(500).json({ msg: "oh no!", err })
+    })
+});
+
 
 module.exports = router;

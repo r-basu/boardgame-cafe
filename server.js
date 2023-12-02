@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 // const { User,Todo} = require('./models');
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESSION_SECRET,
   cookie: {
       maxAge:1000*60*60*2
   },

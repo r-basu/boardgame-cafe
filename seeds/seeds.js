@@ -19,26 +19,33 @@ const shopData = [
 
 const userData = [
     {
-        username: `David Rodriguez`,
-        password: `Password#1`,
+        username: `david`,
+        password: `password`,
         currentGame: null
     },
     {
-        username: `Maria Afzal`,
-        password: `Password#2`,
+        username: `maria`,
+        password: `password`,
         currentGame: null
     },
     {
-        username: `Rahul Basu`,
-        password: `Password#3`,
+        username: `rahul`,
+        password: `password`,
         currentGame: null
     },
     {
-        username: `Manjot Padda`,
-        password: `Password#4`,
+        username: `manjot`,
+        password: `password`,
         currentGame: null
     },
 ];
+
+//Encrypt seeded user passwords
+const bcrypt = require("bcrypt");
+
+for (let userObj of userData) {
+    userObj.password = bcrypt.hashSync(userObj.password, 6)
+}
 
 const categoryData = [
     {

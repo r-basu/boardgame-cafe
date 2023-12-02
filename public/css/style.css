@@ -76,9 +76,15 @@ background-color: rgb(135, 235, 185)
 }
 
 .intro {
-  margin-top: 90px;
+  margin-top: 100px;
 }
 
 .navbar {
   color: darkblue;
+}
+
+.navbar-brand img {
+  width: 64px; 
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 0px; 
 }

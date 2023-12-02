@@ -66,14 +66,16 @@ router.put("/addCurrentGame/:gameId", (req, res) => {
                     msg: "Please unclaim game first"
                 })
             } else {
-                dbUser.update({
-                    currentGame: req.params.gameId
-                })
                 Game.findByPk(req.params.gameId).then(dbGame => {
                     dbGame.update({
                         isAvailable: false
                     })
+                    dbUser.update({
+                        currentGame: dbGame.id,
+                        currentGameTitle: dbGame.title
+                    })
                 })
+
                 // TODO: LOOK INTO HOW TO AVOID DUPLICATING ENTRY CRASH ERROR IF TRYING TO CLAIM GAME
                 // if (!dbUser.Games.id === req.params.gameId) {
                 dbUser.addGame(req.params.gameId)
@@ -89,7 +91,7 @@ router.put("/addCurrentGame/:gameId", (req, res) => {
 
 // Delete Current Game
 //PROTECTED ROUTE
-router.put("/deleteCurrentGame/:gameId", (req, res) => {
+router.put("/deleteCurrentGame/", (req, res) => {
     if (!req.session.user) {
         return res.status(401).json({
             msg: "Please login to unclaim a game"
@@ -103,12 +105,13 @@ router.put("/deleteCurrentGame/:gameId", (req, res) => {
                     msg: "Please claim game first"
                 })
             } else {
-                dbUser.update({
-                    currentGame: null
-                })
-                Game.findByPk(req.params.gameId).then(dbGame => {
+                Game.findByPk(dbUser.currentGame).then(dbGame => {
                     dbGame.update({
                         isAvailable: true
+                    })
+                    dbUser.update({
+                        currentGame: null,
+                        currentGameTitle: null
                     })
                 })
                 res.status(200).json({
@@ -137,6 +140,21 @@ router.get(`/`, (req, res) => {
 // Find One User
 router.get("/:id", (req, res) => {
     User.findByPk(req.params.id, {
+        include: [Game, Review]
+    }).then(dbUser => {
+        if (!dbUser) {
+            res.status(404).json({ msg: "no such user!" })
+        } else {
+            res.json(dbUser)
+        }
+    }).catch(err => {
+        res.status(500).json({ msg: "oh no!", err })
+    })
+});
+
+// Find Session User
+router.get("/session/:id", (req, res) => {
+    User.findByPk(req.session.user.id, {
         include: [Game, Review]
     }).then(dbUser => {
         if (!dbUser) {

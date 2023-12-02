@@ -38,22 +38,28 @@
 </container>
 
 <container class="favoriteGames">
-        <card id="currentGame">
-        <div>
-            <h3 class="game-title">{{gamename}}</h3>
-            <a href="/title/{{id}}"></a>
+    <p id="fgheading">Favorite Games</p>
+    <div class="reviewed-game">
+        <div class="game-card" id="5starred">
+            <div>
+                <p class="game-title">Highest Rated{{gamename}}</p>
+                <img src="game-image.jpg" alt="Game Image">
+                <a href="/title/{{id}}"></a>
+            </div>
         </div>
-    </card>
-    <card id="lastGame">
-        <div>
-            <h3 class="game-title">{{gamename}}</h3>
-            <a href="/title/{{id}}"></a>
+        <div class="game-card" id="4or3starred">
+            <div>
+                <p class="game-title">Medium Rated{{gamename}}</p>
+                <img src="game-image.jpg" alt="Game Image">
+                <a href="/title/{{id}}"></a>
+            </div>
         </div>
-    </card>
-    <card id="previousGame">
-        <div>
-            <h3 class="game-title">{{gamename}}</h3>
-            <a href="/title/{{id}}"></a>
+        <div class="game-card" id="1or2starred">
+            <div>
+                <p class="game-title">Lowest Rated{{gamename}}</p>
+                <img src="game-image.jpg" alt="Game Image">
+                <a href="/title/{{id}}"></a>
+            </div>
         </div>
-    </card>
+    </div>
 </container>

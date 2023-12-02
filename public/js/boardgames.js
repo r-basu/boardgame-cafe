@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Global Variables 
 let boardgamesData;
 let categoriesData;
-
+let gameFormData;
 
 // Retrieve data from boardgames_db
 // fetch boardgames data
@@ -35,7 +35,14 @@ const gameSeachForm = document.getElementById(`gameSeachForm`);
 gameSeachForm.addEventListener(`submit`, function (event) {
     // prevent default behavior
     event.preventDefault();
-    console.log(`niceeee`);
+    // Get the values of the form elements
+    const title = document.getElementById(`title-value`).value
+    const age = document.getElementById(`age-value`).value
+    const players = document.getElementById(`players-value`).value
+    const formData = new FormData(gameSeachForm)
+    const categories = formData.getAll(`categories-values`)
+    const duration = document.getElementById(`duration-value`).value
+    console.log(title, age, players, categories, duration);
 })
 
 

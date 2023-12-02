@@ -1,52 +1,53 @@
 <body>
   <div class="formBox">
     <h2>Complete form for game suggestion</h2>
+    <p>Use the title field to look for any specific game or use the other fields to filter the game library.</p>
     <form id="gameSeachForm">
       <label for="title">Title:</label>
       <div class="input-field col s12">
-        <select>
+        <select id="title-value">
           <option value="" disabled selected>Choose your option</option>
           {{#each boardgames}}
             <option value={{this.id}}>{{this.title}}</option>
           {{/each}}
         </select>
       </div>
-
+      <h4>OR</h4>
       <label for="age">Age:</label>
       <div class="input-field col s12">
-        <select>
+        <select id="age-value">
           <option value="" disabled selected>Choose your option</option>
           {{#each minAges}}
-            <option value="{{this.index}}">{{this.age}}</option>
+            <option value="{{this.age}}">{{this.age}}</option>
           {{/each}}
         </select>
       </div>
 
       <label for="players">Players:</label>
       <div class="input-field col s12">
-        <select>
+        <select id="players-value">
           <option value="" disabled selected>Choose your option</option>
           {{#each players}}
-            <option value="{{this.index}}">{{this.player}}</option>
+            <option value="{{this.player}}">{{this.player}}</option>
           {{/each}}
         </select>
       </div>
 
       <label for="categories">Categories:</label>
       <div class="input-field col s12">
-        <select multiple id="categories" name="categories">
+        <select multiple id="categories" name="categories-values">
           {{#each categories}}
-            <option value="{{this.id}}">{{this.name}}</option>
+            <option value="{{this.name}}">{{this.name}}</option>
           {{/each}}
         </select>
       </div>
 
       <label for="duration">Game Duration:</label>
       <div class="input-field col s12">
-        <select>
+        <select id="duration-value">
           <option value="" disabled selected>Choose your option</option>
           {{#each duration}}
-            <option value="{{this.index}}">{{this.time}}</option>
+            <option value="{{this.time}}">{{this.time}}</option>
           {{/each}}
         </select>
       </div>

@@ -1,7 +1,13 @@
 
 <div class="profilePage">
-    <a id="userName">Username: {{user.username}}</a>
-    <a id="currentGame">Current Game: {{gamename}}</a>
+    <form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" value="{{user.username}}">
+    </form>
+    <form>
+    <label for="currentGame">Current Game:</label>
+    <input type="text" id="currentGame" value="{{game.gamename}}">
+    </form>
 </div>
 
 <container class="playedGames">

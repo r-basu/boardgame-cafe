@@ -92,18 +92,32 @@ router.get("/boardgames", async (req, res) => {
   };
 })
 
+//Profile Page
 router.get("/profile", (req, res) => {
   try {
-    const userData = {
-      userid: req.session.user.id
-    }
-    res.render("profile", userData)
-    console.log("profile")
+    User.findByPk(req.session.user.id, {
+      include: [Game, Review]
+    }).then(dbUser => {
+      if (!dbUser) {
+        res.status(404).json({ msg: "no such user!" })
+      } else {
+        const userData = {
+          id: dbUser.id,
+          username: dbUser.username,
+          currentGame: dbUser.currentGame,
+          currentGameTitle: dbUser.currentGameTitle,
+          playedGames: dbUser.Games,
+          reviews: dbUser.Reviews
+        }
+        res.render("profile", userData)
+        console.log("profile")
+      }
+    })
   }
   catch (err) {
     console.log(err);
     res.status(500).json(err);
-  };
+  }
 })
 
 // Render the individual boardgame page

@@ -11,24 +11,30 @@
 </div>
 
 <container class="playedGames">
-    <card id="currentGame">
-        <div>
-            <h3 class="game-title">{{gamename}}</h3>
-            <a href="/title/{{id}}"></a>
+    <p id="pgheading">Last 3 Games</p>
+    <div class="game-container">
+        <div class="game-card" id="currentGame">
+            <div>
+                <p class="game-title">Current Game{{gamename}}</p>
+                <img src="game-image.jpg" alt="Game Image">
+                <a href="/title/{{id}}"></a>
+            </div>
         </div>
-    </card>
-    <card id="lastGame">
-        <div>
-            <h3 class="game-title">{{gamename}}</h3>
-            <a href="/title/{{id}}"></a>
+        <div class="game-card" id="lastGame">
+            <div>
+                <p class="game-title">Last Game{{gamename}}</p>
+                <img src="game-image.jpg" alt="Game Image">
+                <a href="/title/{{id}}"></a>
+            </div>
         </div>
-    </card>
-    <card id="previousGame">
-        <div>
-            <h3 class="game-title">{{gamename}}</h3>
-            <a href="/title/{{id}}"></a>
+        <div class="game-card" id="previousGame">
+            <div>
+                <p class="game-title">Previous Game{{gamename}}</p>
+                <img src="game-image.jpg" alt="Game Image">
+                <a href="/title/{{id}}"></a>
+            </div>
         </div>
-    </card>
+    </div>
 </container>
 
 <container class="favoriteGames">

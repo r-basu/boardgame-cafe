@@ -30,93 +30,98 @@
   }
 
 
-#gameInfo {
+  #gameInfo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 50px;
     padding-top: 50px;
     background-color: aqua;
-}
-
-#gameImage {
+  }
+  
+  #gameImage {
     margin-top: 200px;
     padding-left: 20px;
-}
-
-.rating {
+    width: 50%;
+  }
+  
+  .rating {
     display: inline-block;
     padding-left: 20px;
-}
-
-.rating input {
+  }
+  
+  .rating input {
     padding-left: 20px;
     display: none;
   }
-.rating label {
+  
+  .rating label {
     float: left;
     cursor: pointer;
     color: #ccc;
   }
-.rating label:before {
+  
+  .rating label:before {
     content: '\2605';
     font-size: 24px;
   }
-.rating input:checked ~ label {
+  
+  .rating input:checked ~ label {
     color: #ffcc00;
   }
-
-#reviewPage {
+  
+  #reviewPage {
     display: block;
     margin-top: 20px;
     margin-left: 20px;
-}
-
-.button#reviewPage {
+  }
+  
+  .button#reviewPage {
     width: 100px;
     height: 40px;
     font-size: medium;
-}
-
-#description {
-  padding-left: 20px;
-}
-
-#des-text{
-  padding-left: 20px;
-}
-
-#gameDetail {
-display: flex;
-flex-direction: column;
-padding-top: 10px;
-background-color: rgb(135, 235, 185)
-}
-
-.gameStats {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#stats-title{
-  padding-left: 20px;
-}
-
-.length,
-.numPlayer,
-.playerAge,
-.category,
-.shop {
-  margin-bottom: 20px;
-  padding-left: 20px;
-}
-
-.gameStats p {
-  display: flex;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  margin: 5px;
-}
+  }
+  
+  #description {
+    padding-left: 20px;
+  }
+  
+  #des-text {
+    padding-left: 20px;
+  }
+  
+  #gameDetail {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    background-color: rgb(135, 235, 185);
+    width: 50%;
+  }
+  
+  .gameStats {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #stats-title {
+    padding-left: 20px;
+  }
+  
+  .length,
+  .numPlayer,
+  .playerAge,
+  .category,
+  .shop {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  .gameStats p {
+    display: flex;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin: 5px;
+  }
 
 .intro {
   margin-top: 100px;

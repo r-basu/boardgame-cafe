@@ -1,19 +1,31 @@
 #gameAvailable {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin-top: 100px;
     padding: 20px;
-    background-color: rgb(19, 139, 93);
 }
 
   .title-gap {
     margin-bottom: 50px;
   }
 
-  .avail-gap {
-    margin-top: 50px;
-    margin-left: 70px;
+  .isAvail {
+    margin-top: 10px;
   }
+
+  .is-available-input {
+    margin-left: 175px;
+  }
+  
+  /* .is-available-label {
+    margin-left: 175px;
+  } */
+
+  .isAvail-text {
+    margin-left: 175px;
+  }
+
 
 #gameInfo {
     display: flex;

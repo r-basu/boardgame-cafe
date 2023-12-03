@@ -17,6 +17,20 @@ router.get("/game/:gameId", (req, res) => {
     });
 });
 
+//Modified route for single board game to redirect user to reviews page
+router.get("/game/:gameId", (req, res) => {
+  res.redirect(`/game/${req.params.gameId}/reviews`);
+});
+
+// Added this route to render review data for games
+router.get("/game/:gameId/reviews", (req, res) => {
+  res.render("review", 
+  { 
+    where: { GameId: req.params.gameId },
+    include: [User, Game] 
+  });
+});
+
 // Get All Reviews by Single UserID
 router.get("/user/:userId", (req, res) => {
   Review.findAll(
@@ -71,19 +85,19 @@ router.put("/editReview/:reviewId", (req, res) => {
 
 // Delete Review
 // TODO: Add protected route
-router.delete("/deleteReview/:reviewId",(req,res)=>{
+router.delete("/deleteReview/:reviewId", (req, res) => {
   Review.destroy({
-      where:{
-          reviewId:req.params.reviewId
-      }
-  }).then(delReview=>{
-      if(!delReview){
-          res.status(404).json({msg:"no such user!"})
-      } else{
-          res.json(delReview)
-      }
-  }).catch(err=>{
-      res.status(500).json({msg:"oh no!",err})
+    where: {
+      reviewId: req.params.reviewId
+    }
+  }).then(delReview => {
+    if (!delReview) {
+      res.status(404).json({ msg: "no such user!" })
+    } else {
+      res.json(delReview)
+    }
+  }).catch(err => {
+    res.status(500).json({ msg: "oh no!", err })
   })
 })
 

@@ -1,4 +1,4 @@
-{{!< layout}}
+
 <div class="review-card">
   <div class="review-card-header col-md-10">
     <h1>
@@ -9,19 +9,22 @@
   <div class="review col-md-5">
     <p>
       {{review.id}}.
-      {{review.review_name}}
+      {{review.text}}
     </p>
   </div>
   <div class="col-md-7">
+  <div>
+    <p>Date Submitted: {{dateSubmitted}}</p>
+    <p>Game Rated: {{rating}}</p>
+  </div>
     <p></p>
   </div>
   {{/each}}
 </div>
 
 <div class="review-body">
-  <h2>Title:
-    {{game_title}}
-  </h2>
+  <a href="/game/{{gameId}}/reviews">Reviews</a>
+  <h2>Title: {{game_title}}</h2>
   <container>
     <a>{{game_title}}</a>
     <img src="{{game_image_url}}" alt="Board Game Image">

@@ -1,6 +1,10 @@
 <div id="gameAvailable">
-    <h2 class="title-gap">Game Title{{Game.title}}</h2>
-    <p class="avail-gap">Game Availability:{{isAvailable}}</p>
+  <h2 class="title-gap">Game Title{{Game.title}}</h2>
+  <div class="isAvail">
+    <p id="isAvail-text">Game Availability:</p>
+    <input type="checkbox" class="is-available-input"></input>
+    <label for="isAvailable" class="is-available-label">{{isAvailable}}</label>
+  </div>
 </div>
 
 <section class="gameInfo">

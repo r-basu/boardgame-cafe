@@ -115,7 +115,7 @@ const combineArrays = (array1, array2, array3, array4) => {
     return combinedArray;
 }
 
-const displayCards = () => {
+const displayCards = async () => {
     const gamesToDisplay = [];
     for (let id of wantedGames){
         for(let game of boardgamesData){
@@ -125,4 +125,18 @@ const displayCards = () => {
         };
     };
     console.log(gamesToDisplay);
+
+    const cardContainer = document.getElementById(`card-container`)
+    for(let game of gamesToDisplay){
+        const card = document.createElement(`section`);
+        card.classList.add(`game-card`);
+        card.innerHTML = 
+        `  <a href="/game/${game.id}">
+    <!-- The card contains the game title as the card header -->
+    <header>${game.title}</header>
+    <!-- The card contains the image of the game -->
+    <img src="/assets/img/${game.id}.jpg" alt="${game.title} image">
+    </a>`
+        cardContainer.appendChild(card);        
+    } 
 };

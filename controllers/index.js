@@ -90,7 +90,7 @@ router.get("/boardgames", async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   };
-})
+});
 
 //Profile Page
 router.get("/profile", (req, res) => {
@@ -118,7 +118,7 @@ router.get("/profile", (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-})
+});
 
 // Render the individual boardgame page
 router.get("/game/:id", async (req, res) => {
@@ -144,7 +144,7 @@ router.get("/game/:id", async (req, res) => {
 router.get("/reviews", (req, res) => {
   res.render("reviews")
   console.log("reviews")
-})
+});
 
 
 module.exports = router;

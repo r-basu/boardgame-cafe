@@ -3,21 +3,8 @@ document.querySelector("#loginForm").addEventListener("submit", e => {
     const userObj = {
         username: document.querySelector("#loginUsername").value,
         password: document.querySelector("#loginPassword").value
-    }
-    fetch("/api/users/login", {
-        method: "POST",
-        body: JSON.stringify(userObj),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then(res => {
-        if (res.ok) {
-            location.href = "/profile";
-        } else {
-            M.toast({html: 'Invalid Credentials', classes: 'rounded'} )
-        }
-    })
-
+    };
+    loginUser(userObj);
 })
 
 document.querySelector("#newUserForm").addEventListener("submit", e => {
@@ -38,10 +25,30 @@ document.querySelector("#newUserForm").addEventListener("submit", e => {
             }
         }).then(res => {
             if (res.ok) {
-                location.href = "/profile";
+                const userCredentials = {
+                    username: userObj.username,
+                    password: userObj.password
+                }
+                loginUser(userCredentials)
             } else {
                 alert("trumpet sound")
             }
         })
     }
-})
+});
+
+const loginUser = async (userObj) => {
+    fetch("/api/users/login", {
+        method: "POST",
+        body: JSON.stringify(userObj),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(res => {
+        if (res.ok) {
+            location.href = "/profile";
+        } else {
+            M.toast({html: 'Invalid Credentials', classes: 'rounded'} )
+        };
+    });
+};

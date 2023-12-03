@@ -6,7 +6,7 @@
     padding: 20px;
 }
 
-  .title-gap {
+  #game-title {
     margin-bottom: 20px;
     margin-left: 100px;
   }
@@ -66,8 +66,9 @@
   }
 
 #reviewPage {
-    margin-top: 50px;
-    margin-left: -115px;
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .button#reviewPage {
@@ -76,12 +77,24 @@
     font-size: medium;
 }
 
+#description {
+  padding-left: 20px;
+}
+
+#des-text{
+  padding-left: 20px;
+}
+
 #gameDetail {
 display: flex;
 flex-direction: column;
 margin-top: 50px;
 padding-top: 50px;
 background-color: rgb(135, 235, 185)
+}
+
+#statstitle{
+  padding-left: 20px;
 }
 
 .length,

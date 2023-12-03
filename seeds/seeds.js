@@ -125,6 +125,15 @@ const categoryData = [
     },
     {
         name: `Role Playing`
+    },
+    {
+        name: `Humor`
+    },
+    {
+        name: `Children`
+    },
+    {
+        name: `Trains`
     }
 ];
 
@@ -496,6 +505,19 @@ const seedMe = async () => {
     await dbGames[15].addCategories([19, 24]);
     await dbGames[16].addCategories([24, 25]);
     await dbGames[17].addCategories([11, 10, 23, 26]);
+    await dbGames[18].addCategories([12, 27]);
+    await dbGames[19].addCategories([17, 28]);
+    await dbGames[20].addCategories([6, 28]);
+    await dbGames[21].addCategories([10, 12]);
+    await dbGames[22].addCategories([13, 16]);
+    await dbGames[23].addCategories([7, 12, 13, 16]);
+    await dbGames[24].addCategories([3]);
+    await dbGames[25].addCategories([9, 10, 15]);
+    await dbGames[26].addCategories([15, 17, 28]);
+    await dbGames[27].addCategories([10, 12, 27]);
+    await dbGames[28].addCategories([13, 16, 20]);
+    await dbGames[29].addCategories([29]);
+    await dbGames[30].addCategories([15]);
     await dbGames[0].addShops([1, 2, 3])
     console.log(`Seeding completed :)`);
     process.exit(0)

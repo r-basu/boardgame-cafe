@@ -1,14 +1,26 @@
 <div id="gameAvailable">
-  <h2 class="title-gap">Game Title{{Game.title}}</h2>
+  <h2 class="title-gap" id="game-title">Game Title{{Game.title}}</h2>
   <div class="isAvail">
     <p id="isAvail-text">Game Availability:</p>
     <input type="checkbox" class="is-available-input"></input>
-    <label for="isAvailable" class="is-available-label">{{isAvailable}}</label>
+    <label for="isAvailable" id="is-available-label">{{isAvailable}}</label>
   </div>
 </div>
 
 <section class="gameInfo">
-  <img id="gameImage" src="{{game_image_url}}" alt="Board Game Image">
+  <div class="gameImageAndStats">
+    <img id="gameImage" src="{{game_image_url}}" alt="Board Game Image">
+    <div id="gameDetail">
+      <h3 class="title-gap" id="stats-title">Stats for {{title}}</h3>
+      <p class="lenght">Game Duration {{minTime}}-{{maxTime}}</p>
+      <p class="numPlayer">Amount of Players {{minPlayers}}-{{maxPlayers}}</p>
+      <p class="playerAge">Suitable Ages {{minAge}}</p>
+      <p class="category">Game Categories {{categoryData.name}}</p>
+      <p class="shop">Available to purchase at {{shopData.name}}</p>
+      <button id="claimButton">Claim</button> <!-- Add the claim button here -->
+    </div>
+  </div>
+  
   <container id="gameName">
     <div class="rating">
       <input type="radio" id="star5" name="rating" value="5">
@@ -23,19 +35,7 @@
       <label for="star1"></label>
     </div>
     <button class="button" id="reviewPage">Reviews</button>
-    <h3 id="description">Game Description<h3>
-    <p>{{description}}</p>
+    <h3 id="description">Game Description</h3>
+    <p id="des-text">{{description}}</p>
   </container>
-</section>
-
-<section class="gameStats">
-  <div id="gameDetail">
-    <h3 class="title-gap">Stats for {{title}}</h3>
-    <p class="lenght">Game Duration {{minTime}}-{{maxTime}}</p>
-    <p class="numPlayer">Amount of Players {{minPlayers}}-{{maxPlayers}}</p>
-    <p class="playerAge">Suitable Ages {{minAge}}</p>
-    <p class="category">Game Categories {{categoryData.name}}</p>
-    <p class="shop">Available to purchase at {{shopData.name}}</p>
-    <button id="claimButton">Claim</button> <!-- Add the claim button here -->
-  </div>
 </section>

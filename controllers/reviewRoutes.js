@@ -3,19 +3,19 @@ const router = express.Router();
 const { Review, User, Game } = require("../models");
 
 // Get All Reviews by Single GameID
-router.get("/game/:gameId", (req, res) => {
-  Review.findAll(
-    {
-      where: { GameId: req.params.gameId },
-      include: [User, Game]
-    })
-    .then((dbReviews) => {
-      res.json(dbReviews);
-    })
-    .catch((err) => {
-      res.status(500).json({ msg: "oh no!", err });
-    });
-});
+// router.get("/game/:gameId", (req, res) => {
+//   Review.findAll(
+//     {
+//       where: { GameId: req.params.gameId },
+//       include: [User, Game]
+//     })
+//     .then((dbReviews) => {
+//       res.json(dbReviews);
+//     })
+//     .catch((err) => {
+//       res.status(500).json({ msg: "oh no!", err });
+//     });
+// });
 
 //Modified route for single board game to redirect user to reviews page
 router.get("/game/:gameId", (req, res) => {
@@ -24,13 +24,19 @@ router.get("/game/:gameId", (req, res) => {
 
 // Added this route to render review data for games
 router.get("/game/:gameId/reviews", (req, res) => {
-  res.render("review", 
-  { 
+  Review.findAll({
     where: { GameId: req.params.gameId },
-    include: [User, Game] 
-  });
+    include: [User, Game],
+  })
+    .then((dbReviews) => {
+      res.render("review", {
+        reviews: dbReviews,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({ msg: "oh no!", err });
+    });
 });
-
 // Get All Reviews by Single UserID
 router.get("/user/:userId", (req, res) => {
   Review.findAll(

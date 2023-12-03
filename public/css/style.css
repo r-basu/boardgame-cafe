@@ -103,6 +103,15 @@ background-color: rgb(135, 235, 185)
 .category,
 .shop {
   margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.gameStats p {
+  display: inline-block;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin: 5px;
 }
 
 .intro {

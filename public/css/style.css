@@ -43,6 +43,7 @@
     margin-top: 200px;
     padding-left: 20px;
     width: 50%;
+    margin-right: 235px;
   }
   
   .rating {
@@ -91,8 +92,9 @@
   }
   
   #gameDetail {
-    display: flex;
+    display: inline-block;
     flex-direction: column;
+    align-items: center;
     padding-top: 10px;
     background-color: rgb(135, 235, 185);
     width: 50%;
@@ -122,6 +124,13 @@
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     margin: 5px;
+  }
+
+  #claimButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
 .intro {

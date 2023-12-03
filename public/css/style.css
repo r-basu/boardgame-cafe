@@ -1,9 +1,11 @@
 /* singleboardgame page styling */
 #gameAvailable {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 100px;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
     padding: 20px;
 }
 
@@ -33,17 +35,18 @@
 
   #gameInfo {
     display: flex;
-    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-items: center;
     margin-top: 50px;
     padding-top: 50px;
     background-color: aqua;
   }
   
   #gameImage {
-    margin-top: 200px;
+    margin-top: 30px;
     padding-left: 20px;
-    width: 50%;
-    margin-right: 235px;
+    width: 350px;
+    margin-right: 30px;
   }
   
   .rating {
@@ -218,4 +221,11 @@ img {
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+.gameImageAndStats{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }

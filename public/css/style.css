@@ -88,9 +88,13 @@
 #gameDetail {
 display: flex;
 flex-direction: column;
-margin-top: 50px;
-padding-top: 50px;
+padding-top: 10px;
 background-color: rgb(135, 235, 185)
+}
+
+.gameStats {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #stats-title{
@@ -107,7 +111,7 @@ background-color: rgb(135, 235, 185)
 }
 
 .gameStats p {
-  display: inline-block;
+  display: flex;
   padding: 10px;
   background-color: #f0f0f0;
   border: 1px solid #ccc;

@@ -45,6 +45,7 @@
 
 #rating {
     display: inline-block;
+    padding-left: 20px;
 }
 
 .rating input {

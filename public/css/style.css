@@ -1,19 +1,33 @@
 #gameAvailable {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin-top: 100px;
     padding: 20px;
-    background-color: rgb(19, 139, 93);
 }
 
   .title-gap {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    margin-left: 100px;
   }
 
-  .avail-gap {
-    margin-top: 50px;
-    margin-left: 70px;
+  .isAvail {
+    margin-top: 35px;
+    margin-left: 150px;
   }
+
+  .is-available-input {
+    margin-left: 175px;
+  }
+  
+  /* .is-available-label {
+    margin-left: 175px;
+  } */
+
+  .isAvail-text {
+    margin-right: 175px;
+  }
+
 
 #gameInfo {
     display: flex;
@@ -142,4 +156,21 @@ background-color: rgb(135, 235, 185)
 img {
   max-width: 100%;
   height: auto;
+}
+
+.favoriteGames {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  height: 200px;
+  width: 700px;
+  background-color: rgb(135, 235, 185);
+}
+
+.reviewed-game {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }

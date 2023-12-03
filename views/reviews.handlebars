@@ -7,15 +7,12 @@
   </div>
   {{#each reviews as |review|}}
   <div class="review col-md-5">
-    <p>
-      {{review.id}}.
-      {{review.text}}
-    </p>
+    <p>{{review.id}}.{{review.text}}</p>
   </div>
   <div class="col-md-7">
   <div>
-    <p>Date Submitted: {{dateSubmitted}}</p>
-    <p>Game Rated: {{rating}}</p>
+    <p>Date Submitted: {{review.dateSubmitted}}</p>
+    <p>Game Rated: {{review.rating}}</p>
   </div>
     <p></p>
   </div>

@@ -1,7 +1,7 @@
 /* singleboardgame page styling */
 #gameAvailable {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     margin-top: 100px;
     padding: 20px;

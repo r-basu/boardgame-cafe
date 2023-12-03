@@ -8,7 +8,19 @@
 </div>
 
 <section class="gameInfo">
-  <img id="gameImage" src="{{game_image_url}}" alt="Board Game Image">
+  <div class="gameImageAndStats">
+    <img id="gameImage" src="{{game_image_url}}" alt="Board Game Image">
+    <div id="gameDetail">
+      <h3 class="title-gap" id="stats-title">Stats for {{title}}</h3>
+      <p class="lenght">Game Duration {{minTime}}-{{maxTime}}</p>
+      <p class="numPlayer">Amount of Players {{minPlayers}}-{{maxPlayers}}</p>
+      <p class="playerAge">Suitable Ages {{minAge}}</p>
+      <p class="category">Game Categories {{categoryData.name}}</p>
+      <p class="shop">Available to purchase at {{shopData.name}}</p>
+      <button id="claimButton">Claim</button> <!-- Add the claim button here -->
+    </div>
+  </div>
+  
   <container id="gameName">
     <div class="rating">
       <input type="radio" id="star5" name="rating" value="5">
@@ -26,16 +38,4 @@
     <h3 id="description">Game Description</h3>
     <p id="des-text">{{description}}</p>
   </container>
-</section>
-
-<section class="gameStats">
-  <div id="gameDetail">
-    <h3 class="title-gap" id="stats-title">Stats for {{title}}</h3>
-    <p class="lenght">Game Duration {{minTime}}-{{maxTime}}</p>
-    <p class="numPlayer">Amount of Players {{minPlayers}}-{{maxPlayers}}</p>
-    <p class="playerAge">Suitable Ages {{minAge}}</p>
-    <p class="category">Game Categories {{categoryData.name}}</p>
-    <p class="shop">Available to purchase at {{shopData.name}}</p>
-    <button id="claimButton">Claim</button> <!-- Add the claim button here -->
-  </div>
 </section>

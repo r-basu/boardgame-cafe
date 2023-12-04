@@ -178,11 +178,12 @@
 
 /* Profile Page styling */
 .profilePage {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   margin-top: 42px;
   padding-top: 50px;
-  height: 200px;
+  padding-bottom: 25px;
+  height: auto;
   width: 400px;
   font-size: large;
   background-color: rgb(135, 235, 185)

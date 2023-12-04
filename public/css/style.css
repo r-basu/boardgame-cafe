@@ -178,11 +178,12 @@
 
 /* Profile Page styling */
 .profilePage {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   margin-top: 42px;
   padding-top: 50px;
-  height: 200px;
+  padding-bottom: 25px;
+  height: auto;
   width: 400px;
   font-size: large;
   background-color: rgb(135, 235, 185)
@@ -208,7 +209,8 @@
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-  height: 200px;
+  margin-bottom: 50px;
+  height: auto;
   width: 700px;
   background-color: rgb(135, 235, 185);
 }
@@ -226,6 +228,7 @@
   text-align: center;
   width: 200px;
   padding: 20px;
+  margin: 25px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -312,9 +315,32 @@ img {
 }
 
 .select-wrapper {
-  width: 45%;
+  width: 80%;
 }
 
 #search-button {
   margin-left: 20px;
+}
+
+#card-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.game-card{
+  background-color: rgb(165, 96, 255);
+
+  font-weight: bold;
+}
+
+.game-card header{
+  margin-bottom: 5px;
+  color: white;
+}
+
+.game-card img{
+  margin-top: 10px;
 }

@@ -161,14 +161,14 @@
 /* Style for the Logout button */
 #logout {
   background-color: white;
-  color: darkblue; /* Text color */
+  color: darkblue;
   border: none;
   padding: 8px 16px;
   margin-left: 300px;
-  margin-top: -109px;
-  font-size: smaller;
+  margin-top: -110px;
+  font-size: medium;
   cursor: pointer;
-  border-radius: 4px; /* Adjust border-radius for rounded corners */
+  border-radius: 4px; 
 }
 
 /* Add hover effect */
@@ -189,7 +189,7 @@
 }
 
 #username {
-  margin-top: 35px;
+  margin-top: 42px;
 }
 
 #unclaimBtn {

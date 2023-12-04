@@ -246,3 +246,7 @@ img {
 .col {
 padding: 0;
 }
+
+.input-field.col.m6 {
+  width: 50%;
+}

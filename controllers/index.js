@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { User, Game, Review, Category } = require("../models")
+const { User, Game, Review, Category, shopData } = require("../models")
 
 
 const gameRoutes = require("./gameRoutes");

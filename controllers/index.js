@@ -14,7 +14,7 @@ const reviewRoutes = require("./reviewRoutes")
 router.use('/api/reviews', reviewRoutes)
 
 router.get("/", (req, res) => {
-  res.render("home")
+  res.render("home", { shopData: shopData });
   console.log("Homepage")
 })
 

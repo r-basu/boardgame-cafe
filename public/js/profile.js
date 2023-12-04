@@ -22,7 +22,7 @@ document.querySelector("#unclaimBtn").addEventListener("click", e => {
     location.reload();
   })
     .catch(error => {
-      console.error('error trying to fetch api route', err);
+      console.error('error trying to fetch api route', error);
     });
 })
 
@@ -33,7 +33,7 @@ document.querySelector("#logout").addEventListener("click", e => {
     location.assign("/login")
   })
     .catch(error => {
-      console.error('error trying to fetch api route', err);
+      console.error('error trying to fetch api route', error);
     });
 })
 

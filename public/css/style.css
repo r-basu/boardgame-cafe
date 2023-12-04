@@ -232,6 +232,11 @@ img {
   justify-content: center;
 }
 /* BoardGames Page Styling */
+
+.formbox {
+  margin-top: 100px;
+}
+
 .instructions{
   margin-top: 100px;
   font-size: 1.56rem;

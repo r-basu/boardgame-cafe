@@ -269,3 +269,56 @@ padding: 0;
     width: 100%;
   }
 }
+
+p.intro{
+  text-align: center;
+  color: rgb(49, 0, 128);
+
+}
+
+a.heading{
+  text-align: center;
+  color: rgb(49, 0, 128);
+
+}
+
+
+.dropbtn {
+  background-color: rgb(185, 110, 219);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f3eded;
+  min-width: 160px;
+  box-shadow: black;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: light rgb(145, 54, 153);}

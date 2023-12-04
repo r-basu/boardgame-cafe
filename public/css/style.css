@@ -168,6 +168,7 @@
 
 .input-field.col.s12.m6 {
   width: 50%;
+  border-color: black;
 }
 
 /* For small screens, make each column take 100% width */

@@ -4,19 +4,20 @@
         Please log in and check out all the board game options we have for you.
     </p>
   
-<form id="ShopForm">
-<div class="shop-container">
-<label for="cafeSelect" id="shop">Board Game Cafe</label>
-  <div class="input-field col s12 m6">
-    <select id="cafeSelect" class="icons">
-      <option value="" disabled selected>Choose your Cafe</option>
-      {{#each shopData}}
-      <option value="{{this.name}}" data-icon="assets/Shop imgs/{{this.image}}">{{this.name}}</option>
-      {{/each}}
-    </select> 
-  </div>
-  </div>
-</form>
+  <form id="ShopForm">
+    <div class="shop-container">
+      <label for="cafeSelect" id="shop">Board Game Cafe</label>
+      <div class="input-field col s12 m6">
+        <select id="cafeSelect" class="icons">
+          <option value="" disabled selected>Choose your Cafe</option>
+          {{#each shopData}}
+          <option value="{{this.name}}" data-icon="/assets/Shop imgs/{{this.image}}">{{this.name}}</option>
+          {{/each}}
+        </select> 
+      </div>
+    </div>
+  </form>
+</div>
   
   {{!-- <button class="dropbtn">The Games</button>
   <div class="dropdown-content">
@@ -25,4 +26,3 @@
     <a href="#">Round Table</a>
   </div>
 </div> --}}
-</div>

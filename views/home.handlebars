@@ -3,13 +3,12 @@
         Welcome to the Cafe!
         Please log in and check out all the board game options we have for you.
     </p>
-  
   <form id="ShopForm">
     <div class="shop-container">
       <label for="cafeSelect" id="shop">Board Game Cafe</label>
       <div class="input-field col s12 m6">
-        <select id="cafeSelect" class="icons">
-          <option value="" disabled selected>Choose your Cafe</option>
+        <select id="shop-value">
+          <option value="" disabled selected> Choose your Cafe</option>
           {{#each shopData}}
           <option value="{{this.name}}" data-icon="/assets/Shop imgs/{{this.image}}">{{this.name}}</option>
           {{/each}}

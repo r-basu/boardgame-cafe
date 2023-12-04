@@ -36,14 +36,6 @@ document.querySelector("#logout").addEventListener("click", e => {
       console.error('error trying to fetch api route', err);
     });
 })
-// //TODO FIX NOT WORKING
-// document.querySelector("#unclaim-btn").addEventListener("submit", e => {
-//   fetch(`/api/users/deleteCurrentGame/`)
-//     .then(response => response.json())
-//     .catch(error => {
-//       console.error('Error trying to fetch user data', error);
-//     });
-// })
 
 const displayGames = () => {
   const lastGamesContainer = document.getElementById(`last-games`)

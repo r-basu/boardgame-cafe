@@ -1,68 +1,49 @@
-<div class="profilePage">
-    <button id="logout">Logout</button>
-    <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" value="{{username}}">
-    </form>
-    <form>
-        <label for="currentGame">Current Game:</label>
-        <input type="text" id="currentGame" value="{{currentGameTitle}}">
-    </form>
-    <button id="unclaimBtn">Unclaim Current Game</button>
+<button id="logout">Logout</button>
+<button id="DeleteUsr">Delete Account</button>
+<div id="info-container">
+    <div class="profilePage">
+        <form id="username">
+            <label for="username">Username:</label>
+            <input type="text" value="{{username}}">
+        </form>
+        <form id="currentGame">
+            <label for="currentGame">Current Game:</label>
+            <input type="text" value="{{currentGameTitle}}">
+        </form>
+        <button id="unclaimBtn">Unclaim Current Game</button>
+    </div>
+
+    <container class="playedGames">
+        <p id="pgheading">Last 3 Games</p>
+        <div id="last-games" class="game-container">
+        </div>
+    </container>
+
+    {{!-- <container class="favoriteGames">
+        <p id="fgheading">Favorite Games</p>
+        <div class="reviewed-game">
+            <div class="game-card" id="5starred">
+                <div>
+                    <p class="game-title">Highest Rated{{gamename}}</p>
+                    <img src="game-image.jpg" alt="Game Image">
+                    <a href="/title/{{id}}"></a>
+                </div>
+            </div>
+            <div class="game-card" id="4or3starred">
+                <div>
+                    <p class="game-title">Medium Rated{{gamename}}</p>
+                    <img src="game-image.jpg" alt="Game Image">
+                    <a href="/title/{{id}}"></a>
+                </div>
+            </div>
+            <div class="game-card" id="1or2starred">
+                <div>
+                    <p class="game-title">Lowest Rated{{gamename}}</p>
+                    <img src="game-image.jpg" alt="Game Image">
+                    <a href="/title/{{id}}"></a>
+                </div>
+            </div>
+        </div>
+    </container> --}}
 </div>
-
-<container class="playedGames">
-    <p id="pgheading">Last 3 Games</p>
-    <div class="game-container">
-        <div class="game-card" id="currentGame">
-            <div>
-                <p class="game-title">Current Game: {{currentGameTitle}}</p>
-                <img src="game-image.jpg" alt="Game Image">
-                <a href="/title/{{id}}"></a>
-            </div>
-        </div>
-        <div class="game-card" id="lastGame">
-            <div>
-                <p class="game-title">Last Game{{gamename}}</p>
-                <img src="game-image.jpg" alt="Game Image">
-                <a href="/title/{{id}}"></a>
-            </div>
-        </div>
-        <div class="game-card" id="previousGame">
-            <div>
-                <p class="game-title">Previous Game{{gamename}}</p>
-                <img src="game-image.jpg" alt="Game Image">
-                <a href="/title/{{id}}"></a>
-            </div>
-        </div>
-    </div>
-</container>
-
-<container class="favoriteGames">
-    <p id="fgheading">Favorite Games</p>
-    <div class="reviewed-game">
-        <div class="game-card" id="5starred">
-            <div>
-                <p class="game-title">Highest Rated{{gamename}}</p>
-                <img src="game-image.jpg" alt="Game Image">
-                <a href="/title/{{id}}"></a>
-            </div>
-        </div>
-        <div class="game-card" id="4or3starred">
-            <div>
-                <p class="game-title">Medium Rated{{gamename}}</p>
-                <img src="game-image.jpg" alt="Game Image">
-                <a href="/title/{{id}}"></a>
-            </div>
-        </div>
-        <div class="game-card" id="1or2starred">
-            <div>
-                <p class="game-title">Lowest Rated{{gamename}}</p>
-                <img src="game-image.jpg" alt="Game Image">
-                <a href="/title/{{id}}"></a>
-            </div>
-        </div>
-    </div>
-</container>
-
 <script src="/js/profile.js"></script>

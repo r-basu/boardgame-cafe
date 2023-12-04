@@ -1,143 +1,143 @@
 /* singleboardgame page styling */
 #gameAvailable {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 50px;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  padding: 20px;
 }
 
-  #game-title {
-    margin-bottom: 20px;
-    margin-left: 100px;
-  }
+#game-title {
+  margin-bottom: 20px;
+  margin-left: 100px;
+}
 
-  .isAvail {
-    margin-top: 35px;
-    margin-right: 100px;
-  }
+.isAvail {
+  margin-top: 35px;
+  margin-right: 100px;
+}
 
-  .is-available-input {
-    margin-left: 175px;
-  }
-  
-  .is-available-label {
-    margin-left: auto;
-  }
+.is-available-input {
+  margin-left: 175px;
+}
 
-  .isAvail-text {
-    margin-right: 100px;
-    margin-top: initial;
-  }
+.is-available-label {
+  margin-left: auto;
+}
+
+.isAvail-text {
+  margin-right: 100px;
+  margin-top: initial;
+}
 
 
-  #gameInfo {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 50px;
-    padding-top: 50px;
-    background-color: aqua;
-  }
-  
-  #gameImage {
-    margin-top: 30px;
-    padding-left: 20px;
-    width: 350px;
-    margin-right: 30px;
-  }
-  
-  .rating {
-    display: inline-block;
-    padding-left: 20px;
-  }
-  
-  .rating input {
-    padding-left: 20px;
-    display: none;
-  }
-  
-  .rating label {
-    float: left;
-    cursor: pointer;
-    color: #ccc;
-  }
-  
-  .rating label:before {
-    content: '\2605';
-    font-size: 24px;
-  }
-  
-  .rating input:checked ~ label {
-    color: #ffcc00;
-  }
-  
-  #reviewPage {
-    display: block;
-    margin-top: 20px;
-    margin-left: 20px;
-  }
-  
-  .button#reviewPage {
-    width: 100px;
-    height: 40px;
-    font-size: medium;
-  }
-  
-  #description {
-    padding-left: 20px;
-  }
-  
-  #des-text {
-    padding-left: 20px;
-  }
-  
-  #gameDetail {
-    display: inline-block;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-    background-color: rgb(135, 235, 185);
-    width: 50%;
-    position: relative;
-  }
-  
-  .gameStats {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  #stats-title {
-    padding-left: 20px;
-  }
-  
-  .length,
-  .numPlayer,
-  .playerAge,
-  .category,
-  .shop {
-    margin-bottom: 20px;
-    padding-left: 20px;
-  }
-  
-  .gameStats p {
-    display: flex;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    margin: 5px;
-  }
+#gameInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 50px;
+  background-color: aqua;
+}
 
-  #claimButton {
-    position: absolute;
-    bottom:0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+#gameImage {
+  margin-top: 30px;
+  padding-left: 20px;
+  width: 350px;
+  margin-right: 30px;
+}
 
-  /* Main page styling */
+.rating {
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.rating input {
+  padding-left: 20px;
+  display: none;
+}
+
+.rating label {
+  float: left;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.rating label:before {
+  content: '\2605';
+  font-size: 24px;
+}
+
+.rating input:checked~label {
+  color: #ffcc00;
+}
+
+#reviewPage {
+  display: block;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.button#reviewPage {
+  width: 100px;
+  height: 40px;
+  font-size: medium;
+}
+
+#description {
+  padding-left: 20px;
+}
+
+#des-text {
+  padding-left: 20px;
+}
+
+#gameDetail {
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  background-color: rgb(135, 235, 185);
+  width: 50%;
+  position: relative;
+}
+
+.gameStats {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#stats-title {
+  padding-left: 20px;
+}
+
+.length,
+.numPlayer,
+.playerAge,
+.category,
+.shop {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.gameStats p {
+  display: flex;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+#claimButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Main page styling */
 .intro {
   margin-top: 100px;
 }
@@ -147,9 +147,10 @@
 }
 
 .navbar-brand img {
-  width: 64px; 
-  height: auto; /* Maintain the aspect ratio */
-  margin-right: 0px; 
+  width: 64px;
+  height: auto;
+  /* Maintain the aspect ratio */
+  margin-right: 0px;
 }
 
 .login-heading,
@@ -159,14 +160,14 @@
 
 /* Profile Page styling */
 .profilePage {
-display: flex;
-flex-direction: column;
-margin-top: 100px;
-padding-top: 50px;
-height: 200px;
-width: 400px;
-font-size: large;
-background-color: rgb(135, 235, 185)
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  padding-top: 50px;
+  height: 200px;
+  width: 400px;
+  font-size: large;
+  background-color: rgb(135, 235, 185)
 }
 
 .playedGames {
@@ -225,19 +226,20 @@ img {
   gap: 20px;
 }
 
-.gameImageAndStats{
+.gameImageAndStats {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
+
 /* BoardGames Page Styling */
-.instructions{
+.instructions {
   margin-top: 100px;
   font-size: 1.56rem;
   font-style: italic;
 }
 
 .input-field.col.s6 {
-padding: 0;
+  padding: 0;
 }

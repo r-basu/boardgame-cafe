@@ -1,63 +1,61 @@
-<body>
-  <div class="formBox">
-    <h2 id="instructions">COMPLETE FORM FOR GAME SUGGESTION</h2>
-    <p>Use the title field to look for any specific game or use the other fields to filter the game library.</p>
-    <form id="gameSeachForm">
-      <label for="title">Title:</label>
-      <div class="input-field col s6">
-        <select id="title-value">
-          <option value="" disabled selected>Choose your option</option>
-          {{#each boardgames}}
-            <option value={{this.id}}>{{this.title}}</option>
-          {{/each}}
-        </select>
-      </div>
-      <h4>OR</h4>
-      <label for="age">Age:</label>
-      <div class="input-field col s12">
-        <select id="age-value">
-          <option value="" disabled selected>Choose your option</option>
-          {{#each minAges}}
-            <option value="{{this.age}}">{{this.age}}</option>
-          {{/each}}
-        </select>
-      </div>
+<div class="formBox">
+  <h2 id="instructions">COMPLETE FORM FOR GAME SUGGESTION</h2>
+  <p>Use the title field to look for any specific game or use the other fields to filter the game library.</p>
+  <form id="gameSeachForm">
+    <label for="title">Title:</label>
+    <div class="input-field col s6">
+      <select id="title-value">
+        <option value="" disabled selected>Choose your option</option>
+        {{#each boardgames}}
+        <option value={{this.id}}>{{this.title}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <h4>OR</h4>
+    <label for="age">Age:</label>
+    <div class="input-field col s12">
+      <select id="age-value">
+        <option value="" disabled selected>Choose your option</option>
+        {{#each minAges}}
+        <option value="{{this.age}}">{{this.age}}</option>
+        {{/each}}
+      </select>
+    </div>
 
-      <label for="players">Players:</label>
-      <div class="input-field col s12">
-        <select id="players-value">
-          <option value="" disabled selected>Choose your option</option>
-          {{#each players}}
-            <option value="{{this.player}}">{{this.player}}</option>
-          {{/each}}
-        </select>
-      </div>
+    <label for="players">Players:</label>
+    <div class="input-field col s12">
+      <select id="players-value">
+        <option value="" disabled selected>Choose your option</option>
+        {{#each players}}
+        <option value="{{this.player}}">{{this.player}}</option>
+        {{/each}}
+      </select>
+    </div>
 
-      <label for="categories">Categories:</label>
-      <div class="input-field col s12">
-        <select multiple id="categories" name="categories-values">
-          {{#each categories}}
-            <option value="{{this.name}}">{{this.name}}</option>
-          {{/each}}
-        </select>
-      </div>
+    <label for="categories">Categories:</label>
+    <div class="input-field col s12">
+      <select multiple id="categories" name="categories-values">
+        {{#each categories}}
+        <option value="{{this.name}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+    </div>
 
-      <label for="duration">Game Duration:</label>
-      <div class="input-field col s12">
-        <select id="duration-value">
-          <option value="" disabled selected>Choose your option</option>
-          {{#each duration}}
-            <option value="{{this.time}}">{{this.time}}</option>
-          {{/each}}
-        </select>
-      </div>
+    <label for="duration">Game Duration:</label>
+    <div class="input-field col s12">
+      <select id="duration-value">
+        <option value="" disabled selected>Choose your option</option>
+        {{#each duration}}
+        <option value="{{this.time}}">{{this.time}}</option>
+        {{/each}}
+      </select>
+    </div>
 
-      <button type="submit" id="search-button">Game Search</button>
-    </form>
-  </div>
+    <button type="submit" id="search-button">Game Search</button>
+  </form>
+</div>
 
-  <section id="card-container" class="card-container">
+<section id="card-container" class="card-container">
 
-  </section>
-  <script src="/js/boardgames.js"></script>
-</body>
+</section>
+<script src="/js/boardgames.js"></script>

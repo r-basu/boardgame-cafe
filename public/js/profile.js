@@ -11,7 +11,14 @@ fetch(`/api/users/session/{userData.id}`)
     console.error('Error trying to fetch user data', error);
   });
 
-//TODO FIX NOT WORKING
-document.querySelector("#unclaim-btn").addEventListener("submit", e => {
-  fetch(`/api/users/deleteCurrentGame/`)
+document.querySelector("#unclaimBtn").addEventListener("click", e => {
+  fetch(`/api/users/deleteCurrentGame/`, {
+    method: "PUT",
+  }).then(response => {
+    response.json()
+    location.reload();
+  })
+    .catch(error => {
+      console.error('error trying to fetch api route', err);
+    });
 })

@@ -158,6 +158,13 @@
   margin-top: 100px;
 }
 
+/* Home page Styling */
+.dropdown-content.select-dropdown img {
+  max-width: 30px;
+  max-height: 30px;
+  margin-top: 5px;
+}
+
 /* Style for the Logout button */
 #logout {
   background-color: white;

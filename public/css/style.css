@@ -233,11 +233,11 @@ img {
 }
 /* BoardGames Page Styling */
 
-.formbox {
+.formBox {
   margin-top: 100px;
 }
 
-.instructions{
+#instructions{
   margin-top: 100px;
   font-size: 1.56rem;
   font-style: italic;

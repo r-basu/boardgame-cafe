@@ -49,6 +49,14 @@ router.post("/login", (req, res) => {
     })
 })
 
+// Modify the route for the profile page
+router.get("/profile", (req, res) => {
+    // Check if the user is logged in
+    const isLoggedIn = req.session.user !== undefined;
+
+    // Pass the isLoggedIn variable to the view
+    res.render('profile', { isLoggedIn });
+});
 
 // Add Current Game
 //PROTECTED ROUTE

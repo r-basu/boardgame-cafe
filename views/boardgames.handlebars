@@ -1,26 +1,28 @@
-<div class="formBox">
-  <h2 id="instructions">COMPLETE FORM FOR GAME SUGGESTION</h2>
-  <p>Use the title field to look for any specific game or use the other fields to filter the game library.</p>
-  <form id="gameSeachForm">
-    <label for="title">Title:</label>
-    <div class="input-field col s6">
-      <select id="title-value">
-        <option value="" disabled selected>Choose your option</option>
-        {{#each boardgames}}
-        <option value={{this.id}}>{{this.title}}</option>
-        {{/each}}
-      </select>
-    </div>
-    <h4>OR</h4>
-    <label for="age">Age:</label>
-    <div class="input-field col s12">
-      <select id="age-value">
-        <option value="" disabled selected>Choose your option</option>
-        {{#each minAges}}
-        <option value="{{this.age}}">{{this.age}}</option>
-        {{/each}}
-      </select>
-    </div>
+<body>
+  <div class="formBox">
+    <h2 id="instructions">COMPLETE FORM FOR GAME SUGGESTION</h2>
+    <p>Use the title field to look for any specific game or use the other fields to filter the game library.</p>
+    <form id="gameSeachForm">
+      <label for="title">Title:</label>
+      <div class="input-field col s12 m6">
+        <select id="title-value">
+          <option value="" disabled selected>Choose your option</option>
+          {{#each boardgames}}
+            <option value={{this.id}}>{{this.title}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+    <div class="row">
+      <label for="age">Age:</label>
+      <div class="input-field col s12">
+        <select id="age-value">
+          <option value="" disabled selected>Choose your option</option>
+          {{#each minAges}}
+            <option value="{{this.age}}">{{this.age}}</option>
+          {{/each}}
+        </select>
+      </div>
 
     <label for="players">Players:</label>
     <div class="input-field col s12">
@@ -41,19 +43,20 @@
       </select>
     </div>
 
-    <label for="duration">Game Duration:</label>
-    <div class="input-field col s12">
-      <select id="duration-value">
-        <option value="" disabled selected>Choose your option</option>
-        {{#each duration}}
-        <option value="{{this.time}}">{{this.time}}</option>
-        {{/each}}
-      </select>
+      <label for="duration">Game Duration:</label>
+      <div class="input-field col s12">
+        <select id="duration-value">
+          <option value="" disabled selected>Choose your option</option>
+          {{#each duration}}
+            <option value="{{this.time}}">{{this.time}}</option>
+          {{/each}}
+        </select>
+      </div>
     </div>
-
-    <button type="submit" id="search-button">Game Search</button>
-  </form>
-</div>
+    
+      <button type="submit" id="search-button">Game Search</button>
+    </form>
+  </div>
 
 <section id="card-container" class="card-container">
 

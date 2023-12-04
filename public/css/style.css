@@ -234,12 +234,38 @@ img {
 }
 
 /* BoardGames Page Styling */
-.instructions {
+
+.formBox {
+  margin-top: 100px;
+}
+
+#instructions{
   margin-top: 100px;
   font-size: 1.56rem;
   font-style: italic;
 }
 
-.input-field.col.s6 {
-  padding: 0;
+.col {
+padding: 0;
+}
+
+.input-field.col.m6 {
+  width: 45%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col.s12 {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* For small screens, make each column take 100% width */
+@media (max-width: 600px) {
+  .col.s12 {
+    width: 100%;
+  }
 }

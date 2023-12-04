@@ -233,8 +233,8 @@ img {
 }
 /* BoardGames Page Styling */
 .instructions{
-  margin-top: 150px;
-  font-size: medium;
+  margin-top: 100px;
+  font-size: 1.56rem;
   font-style: italic;
 }
 

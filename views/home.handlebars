@@ -4,14 +4,18 @@
         Please log in and check out all the board game options we have for you.
     </p>
   
+<div class="shop-container">
+<label for="shop" id="shop">Board Game Cafe</label>
   <div class="input-field col s12 m6">
     <select class="icons">
       <option value="" disabled selected>Choose your Cafe</option>
-      <option value="guild" data-icon="assets/Shop imgs/TAG-CardBack.jpg">The Adventures Guild</option>
-      <option value="ontap" data-icon="assets/Shop imgs/Games on Tap.png">Games on Tap</option>
-      <option value="round" data-icon="assets/Shop imgs/The Round Table.jpeg">Round Table</option>
-    </select>
-    <label>Images in select</label>
+      {{#each shopData}}
+      <option value="{{this.name}}" data-icon="assets/Shop imgs/TAG-CardBack.jpg"></option>
+      {{!-- <option value="ontap" data-icon="assets/Shop imgs/Games on Tap.png">Games on Tap</option>
+      <option value="round" data-icon="assets/Shop imgs/The Round Table.jpeg">Round Table</option> --}}
+      {{/each}}
+    </select> 
+  </div>
   </div>
     <div class="input-field col s12 m6">
     <select class="icons">

@@ -1,11 +1,13 @@
+<button id="logout">Logout</button>
+<button id="DeleteUsr">Delete Account</button>
 <div class="profilePage">
-    <form>
-    <label for="username">Username:</label>
-    <input type="text" id="username" value="{{username}}">
+    <form id="username">
+        <label for="username">Username:</label>
+        <input type="text" value="{{username}}">
     </form>
-    <form>
-    <label for="currentGame">Current Game:</label>
-    <input type="text" id="currentGame" value="{{currentGameTitle}}">
+    <form id="currentGame">
+        <label for="currentGame">Current Game:</label>
+        <input type="text" value="{{currentGameTitle}}">
     </form>
     <button id="unclaimBtn">Unclaim Current Game</button>
 </div>
@@ -44,4 +46,3 @@
 </container> --}}
 
 <script src="/js/profile.js"></script>
-

@@ -48,7 +48,7 @@ const loginUser = async (userObj) => {
         if (res.ok) {
             location.href = "/profile";
         } else {
-            M.toast({html: 'Invalid Credentials', classes: 'rounded'} )
+            M.toast({ html: 'Invalid Credentials', classes: 'rounded' })
         };
     });
 };

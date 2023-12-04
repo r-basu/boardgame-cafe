@@ -10,21 +10,10 @@
     <select class="icons">
       <option value="" disabled selected>Choose your Cafe</option>
       {{#each shopData}}
-      <option value="{{this.name}}" data-icon="assets/Shop imgs/TAG-CardBack.jpg"></option>
-      {{!-- <option value="ontap" data-icon="assets/Shop imgs/Games on Tap.png">Games on Tap</option>
-      <option value="round" data-icon="assets/Shop imgs/The Round Table.jpeg">Round Table</option> --}}
+      <option value="{{this.name}}" data-icon="assets/Shop imgs/{{this.image}}">{{this.name}}</option>
       {{/each}}
     </select> 
   </div>
-  </div>
-    <div class="input-field col s12 m6">
-    <select class="icons">
-      <option value="" disabled selected>Choose your Cafe</option>
-      <option value="guild" data-icon="assets/Shop imgs/TAG-CardBack.jpg" class="left">The Adventures Guild/option>
-      <option value="ontap" data-icon="assets/Shop imgs/Games on Tap.png" class="left">Games on Tap</option>
-      <option value="round" data-icon="assets/Shop imgs/The Round Table.jpeg" class="left">Round Table</option>
-    </select>
-    <label>Images in select</label>
   </div>
   
   {{!-- <button class="dropbtn">The Games</button>

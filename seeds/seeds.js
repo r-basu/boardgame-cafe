@@ -7,13 +7,16 @@ const sequelize = require(`../config/connection`);
 // Add Data
 const shopData = [
     {
-        name: `The Adventures Guild`
+        name: `The Adventures Guild`,
+        image: `TAG-CardBack.jpg`
     },
     {
-        name: `Games On Tap`
+        name: `Games On Tap`,
+        image: `Games on Tap.png`
     },
     {
-        name: `The Round Table`
+        name: `The Round Table`,
+        image: `The Round Table.jpeg`
     },
 ];
 

@@ -4,10 +4,11 @@
         Please log in and check out all the board game options we have for you.
     </p>
   
+<form id="ShopForm">
 <div class="shop-container">
-<label for="shop" id="shop">Board Game Cafe</label>
+<label for="cafeSelect" id="shop">Board Game Cafe</label>
   <div class="input-field col s12 m6">
-    <select class="icons">
+    <select id="cafeSelect" class="icons">
       <option value="" disabled selected>Choose your Cafe</option>
       {{#each shopData}}
       <option value="{{this.name}}" data-icon="public/assets/Shop imgs/{{this.image}}">{{this.name}}</option>
@@ -15,6 +16,7 @@
     </select> 
   </div>
   </div>
+</form>
   
   {{!-- <button class="dropbtn">The Games</button>
   <div class="dropdown-content">

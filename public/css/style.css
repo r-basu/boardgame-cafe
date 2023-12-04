@@ -160,10 +160,13 @@
 
 /* Style for the Logout button */
 #logout {
-  background-color: #dc3545; /* Use your desired background color */
-  color: darkblue; /* Text color */
+  background-color: white;
+  color: darkblue;
   border: none;
-  padding: 8px 16px; /* Adjust padding as needed */
+  padding: 8px 16px;
+  margin-left: 300px;
+  margin-top: -110px;
+  font-size: medium;
   cursor: pointer;
   border-radius: 4px; /* Adjust border-radius for rounded corners */
 }
@@ -183,6 +186,15 @@
   width: 400px;
   font-size: large;
   background-color: rgb(135, 235, 185)
+}
+
+#username {
+  margin-top: 42px;
+}
+
+#unclaimBtn {
+  width: fit-content;
+  margin-left: 100px;
 }
 
 .playedGames {

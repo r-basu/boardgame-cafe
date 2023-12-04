@@ -158,6 +158,21 @@
   margin-top: 100px;
 }
 
+/* Style for the Logout button */
+#logout {
+  background-color: #dc3545; /* Use your desired background color */
+  color: darkblue; /* Text color */
+  border: none;
+  padding: 8px 16px; /* Adjust padding as needed */
+  cursor: pointer;
+  border-radius: 4px; /* Adjust border-radius for rounded corners */
+}
+
+/* Add hover effect */
+#logout:hover {
+  background-color: #bd2130; /* Change color on hover */
+}
+
 /* Profile Page styling */
 .profilePage {
   display: flex;

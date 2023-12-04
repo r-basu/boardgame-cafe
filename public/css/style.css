@@ -180,7 +180,7 @@
 .profilePage {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 30px;
   padding-top: 50px;
   height: 200px;
   width: 400px;
@@ -189,7 +189,7 @@
 }
 
 #username {
-  margin-top: 42px;
+  margin-top: -35px;
 }
 
 #unclaimBtn {

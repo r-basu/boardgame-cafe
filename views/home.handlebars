@@ -10,7 +10,7 @@
         <select id="shop-value">
           <option value="" disabled selected> Choose your Cafe</option>
           {{#each shopData}}
-            <option value="{{this.name}}" img="/assets/Shop imgs/{{this.image}}">{{this.name}}</option>
+            <option value="{{this.name}}" data-icon="/assets/Shop imgs/{{this.image}}">{{this.name}}</option>
           {{/each}}
         </select> 
       </div>

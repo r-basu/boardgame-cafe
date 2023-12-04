@@ -8,6 +8,7 @@ fetch(`/api/users/session/1`)
     console.log(`User data retrieved`);
     userInfo = userData
     console.log(userInfo)
+    displayGames()
   })
   .catch(error => {
     console.error('Error trying to fetch user data', error);
@@ -21,3 +22,18 @@ fetch(`/api/users/session/1`)
 //       console.error('Error trying to fetch user data', error);
 //     });
 // })
+
+const displayGames = () => {
+  const lastGamesContainer = document.getElementById(`last-games`)
+  for (let i = 0; i < userInfo.Games.length && i <= 3; i++) {
+    const card = document.createElement(`div`);
+    card.classList.add(`game-card`);
+    card.innerHTML = 
+    `<div>
+    <p class="game-title">${i+1}: ${userInfo.Games[i].title}</p>
+    <img src="/assets/img/${userInfo.Games[i].id}.jpg" alt="Game Image">
+    <a href="/game/${userInfo.Games[i].id}"></a>
+    </div>`
+    lastGamesContainer.appendChild(card)
+  }
+}

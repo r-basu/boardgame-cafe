@@ -127,6 +127,10 @@ const combineArrays = (array1, array2, array3, array4) => {
 }
 
 const displayCards = async () => {
+    // localStorage.setItem(`currentGames`, wantedGames);
+    // location.reload();
+    // const previousSearch = localStorage.getItem(`currentGames`);
+    
     const gamesToDisplay = [];
     for (let id of wantedGames) {
         for (let game of boardgamesData) {

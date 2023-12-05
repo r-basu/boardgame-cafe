@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const { User, Game, Review, Category, shopData } = require("../models")
+const Roll = require('roll')
+roll = new Roll();
+
+let randomRoll = roll.roll('d31')
+console.log(randomRoll.result)
+randomGameId = randomRoll.result
 
 
 const gameRoutes = require("./gameRoutes");

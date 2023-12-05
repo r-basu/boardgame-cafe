@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { User, Game, Review, Category, shopData } = require("../models")
+const { User, Game, Review, Category, Shop } = require("../models")
 const Roll = require('roll')
 roll = new Roll();
 
@@ -25,6 +25,7 @@ router.get("/", async (req, res) => {
     const shops = dbShopData.map((shop) => 
       shop.get({ plain: true})
     )
+    const isLoggedIn = req.session.user !== undefined;
     res.render("home", {shops:shops});
     console.log("Homepage")
   // } catch (err){

@@ -21,14 +21,14 @@ router.use('/api/reviews', reviewRoutes)
 
 router.get("/", async (req, res) => {
   // try{
-    const dbShopData = await Shop.findAll();
-    const shops = dbShopData.map((shop) => 
-      shop.get({ plain: true})
-    )
-    const isLoggedIn = req.session.user !== undefined;
-    console.log(isLoggedIn)
-    res.render("home", {isLoggedIn, shops:shops});
-    console.log("Homepage")
+  const dbShopData = await Shop.findAll();
+  const shops = dbShopData.map((shop) =>
+    shop.get({ plain: true })
+  )
+  const isLoggedIn = req.session.user !== undefined;
+  console.log(isLoggedIn)
+  res.render("home", { isLoggedIn, shops: shops });
+  console.log("Homepage")
   // } catch (err){
   //   console.log(err);
   //   res.status(500).json(err);
@@ -37,8 +37,8 @@ router.get("/", async (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.session.user) {
-    res.redirect("/profile")
-    console.log("profile")
+    res.redirect("/")
+    console.log("homepage")
   } else {
     res.render("login")
     console.log("Login")
@@ -112,26 +112,30 @@ router.get("/boardgames", async (req, res) => {
 //Profile Page
 router.get("/profile", (req, res) => {
   try {
-    User.findByPk(req.session.user.id, {
-      include: [Game, Review]
-    }).then(dbUser => {
-      if (!dbUser) {
-        res.status(404).json({ msg: "no such user!" })
-      } else {
-        const userData = {
-          id: dbUser.id,
-          username: dbUser.username,
-          currentGame: dbUser.currentGame,
-          currentGameTitle: dbUser.currentGameTitle,
-          playedGames: dbUser.Games,
-          reviews: dbUser.Reviews
+    if (!req.session.user) {
+      res.redirect("/login")
+      console.log("homepage")
+    } else {
+      User.findByPk(req.session.user.id, {
+        include: [Game, Review]
+      }).then(dbUser => {
+        if (!dbUser) {
+          res.status(404).json({ msg: "no such user!" })
+        } else {
+          const userData = {
+            id: dbUser.id,
+            username: dbUser.username,
+            currentGame: dbUser.currentGame,
+            currentGameTitle: dbUser.currentGameTitle,
+            playedGames: dbUser.Games,
+            reviews: dbUser.Reviews
+          }
+          res.render("profile", userData)
+          console.log("profile")
         }
-        res.render("profile", userData)
-        console.log("profile")
-      }
-    })
-  }
-  catch (err) {
+      })
+    }
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }

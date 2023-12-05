@@ -9,6 +9,18 @@ let categoriesData;
 let gameFormData;
 let wantedGames = []
 
+//Randomize GameID
+document.querySelector("#randomBtn").addEventListener("click", e => {
+    fetch(`/api/games/random/${randomGameId}`)
+        .then(response => {
+            response.json()
+            location.replace(`/game/${randomGameId}`)
+        })
+        .catch(error => {
+            console.error(error);
+        });
+})
+
 // Retrieve data from boardgames_db
 // fetch boardgames data
 fetch('/api/games')

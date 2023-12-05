@@ -42,5 +42,25 @@ router.get("/:id", (req, res) => {
 })
 
 
+//Find Random Game
+const Roll = require('roll')
+roll = new Roll();
+let randomGameId = roll.roll('d31')
+console.log(randomGameId)
+
+router.get("/random/:id", (req, res) => {
+  Game.findByPk(req.params.id, {
+    include: [User, Category]
+  }).then(dbGames => {
+    if (!dbGames) {
+      res.status(404).json({ msg: "no such Boardgame!" })
+    } else {
+      res.json(dbGames)
+    }
+  }).catch(err => {
+    res.status(500).json({ msg: "oh no!", err })
+  })
+})
+
 
 module.exports = router;

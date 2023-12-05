@@ -9,8 +9,8 @@
       <div class="input-field col s12 m6">
         <select id="shop-value" name="shop">
           <option value="" disabled selected> Choose your Cafe</option>
-          {{#each shopData}}
-            <option value="{{this.name}}" data-icon="/assets/Shop imgs/{{this.image}}">{{this.name}}</option>
+          {{#each shops}}
+            <option value="{{name}}" data-icon="/assets/shop_imgs/{{image}}">{{name}}</option>
           {{/each}}
         </select> 
       </div>
@@ -24,6 +24,7 @@
         var instances = M.FormSelect.init(elems);
     });
 </script>
+<script src="/js/home.js"></script>
   
   {{!-- <button class="dropbtn">The Games</button>
   <div class="dropdown-content">

@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { User, Game, Review, Category, shopData } = require("../models")
+const { User, Game, Review, Category, Shop } = require("../models")
+const Roll = require('roll')
+roll = new Roll();
+
+let randomRoll = roll.roll('d31')
+console.log(randomRoll.result)
+randomGameId = randomRoll.result
 
 
 const gameRoutes = require("./gameRoutes");
@@ -13,9 +19,19 @@ router.use('/api/users', userRoutes)
 const reviewRoutes = require("./reviewRoutes")
 router.use('/api/reviews', reviewRoutes)
 
-router.get("/", (req, res) => {
-  res.render("home", { shopData: shopData });
-  console.log("Homepage")
+router.get("/", async (req, res) => {
+  // try{
+    const dbShopData = await Shop.findAll();
+    const shops = dbShopData.map((shop) => 
+      shop.get({ plain: true})
+    )
+    const isLoggedIn = req.session.user !== undefined;
+    res.render("home", {isLoggedIn, shops:shops});
+    console.log("Homepage")
+  // } catch (err){
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // }
 })
 
 router.get("/login", (req, res) => {

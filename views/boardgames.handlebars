@@ -22,6 +22,7 @@
       </div>
     {{!-- adding a visual seperator to show break between option --}}
     <hr class="separator">
+
     <div class="row" id="user-parameters-form">
       <label for="age">Age(years):</label>
       <div class="input-field col s12">
@@ -43,15 +44,6 @@
       </select>
     </div>
 
-    <label for="categories">Categories(gametype):</label>
-    <div class="input-field col s12">
-      <select multiple id="categories" name="categories-values">
-        {{#each categories}}
-        <option value="{{this.name}}">{{this.name}}</option>
-        {{/each}}
-      </select>
-    </div>
-
       <label for="duration">Game Duration(minutes):</label>
       <div class="input-field col s12">
         <select id="duration-value">
@@ -59,6 +51,18 @@
           {{#each duration}}
             <option value="{{this.time}}">{{this.time}}</option>
           {{/each}}
+        </select>
+      </div>
+    </div>
+
+    <!-- Add a new row for Categories dropdown -->
+    <div class="row" id="user-parameters-form">
+      <label for="categories">Categories:</label>
+      <div class="input-field col s12">
+        <select multiple id="categories" name="categories-values">
+        {{#each categories}}
+          <option value="{{this.name}}">{{this.name}}</option>
+        {{/each}}
         </select>
       </div>
     </div>

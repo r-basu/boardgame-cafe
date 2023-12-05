@@ -1,12 +1,11 @@
 <body>
   <div>
-    <button class="buttons" id="randomBtn">Random Game Selection</button>
+    <button class="buttons" id="randomBtn" data-randomId = "{{randomGameId}}">Random Game Selection</button>
   </div>
-  <section id="random-game-card" class="card-container">
-{{!-- the random game card will be here --}}
-  </section>
+  {{!-- <section id="random-game-card" class="card-container"> --}}
+    {{!-- the random game card will be here --}}
+  {{!-- </section> --}}
   <div class="formBox">
-    <button id="randomBtn" data-randomId = "{{randomGameId}}">Random Game Selection</button>
     <h2 id="instructions">COMPLETE FORM FOR GAME SUGGESTION</h2>
     <p id="details">Use the title field to look for any specific game OR use the other fields to filter the game library.</p>
     <form id="gameSeachForm">
@@ -22,10 +21,10 @@
       </div>
       </div>
     {{!-- adding a visual seperator to show break between option --}}
-    <hr class="separator">
+    {{!-- <hr class="separator"> --}}
 
     <div class="row" id="user-parameters-form">
-      <label for="age">Age(years):</label>
+      <label for="age">Age (years):</label>
       <div class="input-field col s12">
         <select id="age">
           <option value="" disabled selected></option>
@@ -35,7 +34,7 @@
         </select>
       </div>
 
-    <label for="players">Players(total):</label>
+    <label for="players">Players:</label>
     <div class="input-field col s12">
       <select id="players">
         <option value="" disabled selected></option>
@@ -45,7 +44,7 @@
       </select>
     </div>
 
-      <label for="duration">Game Duration(minutes):</label>
+      <label for="duration">Game Duration (minutes):</label>
       <div class="input-field col s12">
         <select id="duration-value">
           <option value="" disabled selected></option>

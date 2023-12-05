@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
       shop.get({ plain: true})
     )
     const isLoggedIn = req.session.user !== undefined;
-    res.render("home", {shops:shops});
+    res.render("home", {isLoggedIn, shops:shops});
     console.log("Homepage")
   // } catch (err){
   //   console.log(err);

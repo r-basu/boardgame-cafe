@@ -226,7 +226,7 @@
   height: auto;
   width: 400px;
   font-size: large;
-  background-color: rgb(135, 235, 185)
+  background-color:light rgb(212, 159, 212);
 }
 
 #DeleteUsr {
@@ -252,7 +252,8 @@
   margin-bottom: 50px;
   height: auto;
   width: 700px;
-  background-color: rgb(135, 235, 185);
+  background-color: light rgb(212, 159, 212);
+
 }
 
 .game-container {

@@ -8,17 +8,16 @@ let boardgamesData;
 let categoriesData;
 let gameFormData;
 let wantedGames = []
+let randomGameId;
+
+// Get the random game Id
+const randomBtn = document.getElementById(`randomBtn`);
+randomGameId = randomBtn.getAttribute('data-randomId')
 
 //Randomize GameID
 document.querySelector("#randomBtn").addEventListener("click", e => {
-    fetch(`/api/games/random/${randomGameId}`)
-        .then(response => {
-            response.json()
-            location.replace(`/game/${randomGameId}`)
-        })
-        .catch(error => {
-            console.error(error);
-        });
+    wantedGames.push(randomGameId);
+    displayCards()   
 })
 
 // Retrieve data from boardgames_db

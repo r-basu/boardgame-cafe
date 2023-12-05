@@ -201,7 +201,7 @@
 /* Style for the Logout button - Profile Page */
 #logout {
   background-color: white;
-  color: darkblue;
+  color:rgb(123, 58, 196);
   border: none;
   padding: 8px 16px;
   margin-left: 300px;
@@ -213,7 +213,7 @@
 
 /* Add hover effect */
 #logout:hover {
-  background-color: hotpink; /* Change color on hover */
+  background-color: rgb(214, 214, 214); /* Change color on hover */
 }
 
 /* Profile Page styling */
@@ -241,7 +241,13 @@
 
 #username {
   margin-top: -35px;
+  font-size: medium;
   color:white;
+}
+
+#currentGame{
+  color: white;
+  font-size: medium;
 }
 
 #unclaimBtn {
@@ -272,10 +278,6 @@
 
 }
 
-.game-title{
-  color: white;
-  background-color: hotpink;
-}
 
 .game-container {
   display: flex;
@@ -299,6 +301,8 @@
 .game-title {
   font-weight: bold;
   margin-bottom: 10px;
+  color: white;
+  background-color: hotpink;
 }
 
 img {
@@ -315,7 +319,6 @@ img {
   margin-left: 120px;
   color: white;
   font-size: large;
- 
   height: 200px;
   width: 700px;
   background-color:rgb(123, 58, 196);
@@ -326,6 +329,7 @@ img {
   justify-content: center;
   gap: 2px;
   margin-bottom: 40px;
+  
  
 }
 

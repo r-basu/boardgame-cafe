@@ -37,6 +37,18 @@ document.querySelector("#logout").addEventListener("click", e => {
     });
 })
 
+document.querySelector("#DeleteUsr").addEventListener("click", e => {
+  fetch(`/api/users/delete/`, {
+      method: "DELETE",
+  }).then(response => {
+    response.json()
+    location.assign("/")
+  })
+    .catch(error => {
+      console.error('error trying to fetch api route', error);
+    });
+})
+
 const displayGames = () => {
   const lastGamesContainer = document.getElementById(`last-games`)
   for (let i = 0; i < userInfo.Games.length && i <= 3; i++) {

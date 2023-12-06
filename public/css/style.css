@@ -14,6 +14,13 @@
   margin-left: 100px;
 }
 
+#game-title.title-gap{
+  margin-left: 284px;
+}
+.gameImageAndStats {
+  margin-top: -45px;
+}
+
 .isAvail {
   margin-top: 35px;
   margin-right: 100px;
@@ -99,7 +106,8 @@
   flex-direction: column;
   align-items: center;
   padding-top: 10px;
-  background-color: rgb(135, 235, 185);
+  background-color: rgb(165, 96, 255);
+  color: white;
   width: 50%;
   position: relative;
 }
@@ -117,7 +125,9 @@
 .numPlayer,
 .playerAge,
 .category,
+.isAvail
 .shop {
+  margin-left: 20px;
   margin-bottom: 20px;
   padding-left: 20px;
 }

@@ -5,7 +5,7 @@
 As a boardgame enthusiast, 
 I WANT to access a web application to checkout cafe boardgames and play games with other enthusiasts,
 SO THAT I can find games I enjoy, checkout the game and play the game.
-ONCE I find a favorite boardgame I can claim the game and see it my profile.
+ONCE I find a favorite boardgame I can claim the game and see it on my profile.
 ```
 
 ## Acceptance Criteria

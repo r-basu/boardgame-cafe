@@ -153,6 +153,10 @@
   margin-right: 0px;
 }
 
+.custom-navbar {
+  background-color: rgb(123, 58, 196);;
+}
+
 .login-heading,
 .gamepage-heading {
   margin-top: 100px;

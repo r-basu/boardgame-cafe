@@ -32,6 +32,11 @@
   margin-top: initial;
 }
 
+.container-fluid{
+  color:rgb(123, 58, 196);
+
+}
+
 
 #gameInfo {
   display: flex;
@@ -143,7 +148,7 @@
 }
 
 .navbar {
-  color: darkblue;
+  color:rgb(123, 58, 196);
 }
 
 .navbar-brand img {
@@ -151,6 +156,12 @@
   height: auto;
   /* Maintain the aspect ratio */
   margin-right: 0px;
+}
+
+.navbar navbar-expand-lg navbar-dark{
+ color:rgb(123, 58, 196);
+  
+
 }
 
 .login-heading,
@@ -204,8 +215,8 @@
   color:rgb(123, 58, 196);
   border: none;
   padding: 8px 16px;
-  margin-left: 300px;
-  margin-top: 3px;
+  margin-left: 21px;
+  margin-top: 41px;
   font-size: medium;
   cursor: pointer;
   border-radius: 4px; 
@@ -213,7 +224,9 @@
 
 /* Add hover effect */
 #logout:hover {
-  background-color: rgb(214, 214, 214); /* Change color on hover */
+  background-color: #ddd;
+  font-size: 20px;
+
 }
 
 /* Profile Page styling */
@@ -227,39 +240,52 @@
   height: auto;
   width: 400px;
   font-size: large;
-  background-color: rgb(123, 58, 196);
+  background-color: white;
 
 
 }
 
 #DeleteUsr {
   margin-top: 10px;
-  margin-left: 33px;
+  margin-left: 330px;
   color: white;
   background-color: rgb(123, 58, 196);
+  border-color: black;
 }
 
-#username {
-  margin-top: -35px;
-  font-size: medium;
-  color:white;
+#username{
+  margin-top:-35px;
 }
 
-#currentGame{
-  color: white;
-  font-size: medium;
+label.active{
+  color: rgb(123, 58, 196);
 }
+
+label{
+  color: rgb(123, 58, 196);
+}
+
+input{
+  color: rgb(123, 58, 196);
+}
+
+
+
+
 
 #unclaimBtn {
   width: fit-content;
   margin-left: 100px;
   color: white;
   background-color: hotpink;
+  border-color: black;
+  
 }
 
 #pgheading{
   color: white;
   font-size: large;
+
   
  
 }
@@ -303,6 +329,7 @@
   margin-bottom: 10px;
   color: white;
   background-color: hotpink;
+  
 }
 
 img {

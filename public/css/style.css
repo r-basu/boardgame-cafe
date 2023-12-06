@@ -205,46 +205,70 @@
 /* Style for the Logout button - Profile Page */
 #logout {
   background-color: white;
-  color: rgb(49, 0, 128);
+  color:rgb(123, 58, 196);
   border: none;
   padding: 8px 16px;
-  margin-left: 300px;
-  margin-top: 3px;
+  margin-left: 21px;
+  margin-top: 41px;
   font-size: medium;
   cursor: pointer;
-  border-radius: 4px; 
+  border-radius: 4px;
+  font-size: 15px;
 }
 
 /* Add hover effect */
 #logout:hover {
-  background-color: hotpink; /* Change color on hover */
+  background-color: #ddd;
+  font-size: 20px;
+
 }
 
 /* Profile Page styling */
 .profilePage {
   /* display: flex;
   flex-direction: column; */
+  margin-left: 180px;
   margin-top: 42px;
   padding-top: 50px;
   padding-bottom: 25px;
   height: auto;
   width: 400px;
   font-size: large;
-  background-color:light rgb(212, 159, 212);
+  background-color:white;
 }
 
 #DeleteUsr {
   margin-top: 10px;
-  margin-left: 33px;
+  margin-left: 300px;
+  color: white;
+  background-color: rgb(123, 58, 196);
+  border-color: black;
 }
 
 #username {
   margin-top: -35px;
 }
 
+label.active{
+  color: rgb(123, 58, 196);
+}
+
+label{
+  color: rgb(123, 58, 196);
+}
+
+input{
+  color: rgb(123, 58, 196);
+}
+
+
+
 #unclaimBtn {
   width: fit-content;
   margin-left: 100px;
+  color: white;
+  background-color: hotpink;
+  border-color: black;
 }
 
 .playedGames {
@@ -252,13 +276,16 @@
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  margin-left: 50px;
   margin-top: 50px;
   margin-bottom: 50px;
   height: auto;
   width: 700px;
-  background-color: light rgb(212, 159, 212);
-
+  background-color: rgb(123, 58, 196);
+  
 }
+
+
 
 .game-container {
   display: flex;
@@ -282,6 +309,7 @@
 .game-title {
   font-weight: bold;
   margin-bottom: 10px;
+  background-color: hotpink;
 }
 
 img {
@@ -295,15 +323,25 @@ img {
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+  margin-left: 50px;
   height: 200px;
   width: 700px;
-  background-color: rgb(135, 235, 185);
+  color: white;
+  background-color:rgb(123, 58, 196) ;
 }
+
+#pgheading{
+  color: white;
+  background-color: hotpink;
+  border-color: black;
+
+}
+
 
 .reviewed-game {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 3px;
 }
 
 .gameImageAndStats {

@@ -12,7 +12,7 @@
       <div class="title-container">
       <label for="title" id="title">Title:</label>
       <div class="input-field col s12">
-        <select id="title">
+        <select id="title-value">
           <option value="" disabled selected>  Choose your option</option>
           {{#each boardgames}}
             <option value={{this.id}}>{{this.title}}</option>
@@ -26,7 +26,7 @@
     <div class="row" id="user-parameters-form">
       <label for="age">Age(years):</label>
       <div class="input-field col s12">
-        <select id="age">
+        <select id="age-value">
           <option value="" disabled selected></option>
           {{#each minAges}}
             <option value="{{this.age}}">{{this.age}}</option>
@@ -36,7 +36,7 @@
 
     <label for="players">Players(total):</label>
     <div class="input-field col s12">
-      <select id="players">
+      <select id="players-value">
         <option value="" disabled selected></option>
         {{#each players}}
         <option value="{{this.player}}">{{this.player}}</option>

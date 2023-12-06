@@ -257,17 +257,11 @@ label{
   color: rgb(123, 58, 196);
 }
 
-input{
-  color: rgb(123, 58, 196);
-}
-
-
-
 #unclaimBtn {
   width: fit-content;
   margin-left: 100px;
   color: white;
-  background-color: hotpink;
+  background-color: silver;
   border-color: black;
 }
 
@@ -281,11 +275,8 @@ input{
   margin-bottom: 50px;
   height: auto;
   width: 700px;
-  background-color: rgb(123, 58, 196);
-  
+  background-color: rgb(123, 58, 196);  
 }
-
-
 
 .game-container {
   display: flex;
@@ -309,7 +300,7 @@ input{
 .game-title {
   font-weight: bold;
   margin-bottom: 10px;
-  background-color: hotpink;
+  color: white;
 }
 
 img {
@@ -332,11 +323,9 @@ img {
 
 #pgheading{
   color: white;
-  background-color: hotpink;
   border-color: black;
-
+  font-weight: bold;
 }
-
 
 .reviewed-game {
   display: flex;
@@ -358,10 +347,11 @@ img {
   color: white;
   background-color: rgb(123, 58, 196);
   padding: 10px;
+  border-radius: 5px;
 }
 
 .buttons:hover {
-  background-color: hotpink;
+  background-color: rgb(171, 103, 249);
 }
 
 .formBox {
@@ -369,7 +359,6 @@ img {
 }
 
 #instructions{
-  margin-top: 100px;
   font-size: 2.05rem;
   font-style: italic;
   font-family: fantasy;
@@ -389,7 +378,7 @@ img {
 #title {
   padding-left: 20px;
   font-size: 13px;
-  color: #009688;
+  color:rgb(123, 58, 196);
 }
 
 .row {
@@ -402,7 +391,7 @@ img {
 
 .row label {
   font-size: 13px;
-  color: #009688;
+  color:rgb(123, 58, 196);
 }
 
 .row .input-field {
@@ -503,4 +492,26 @@ a.heading{
 
 .game-card img{
   margin-top: 10px;
+}
+
+container.playedGames{
+  border-radius: 15px;
+}
+
+#top-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#randomBtn{
+  margin: 20px;
+}
+
+.title-container{
+  margin-top: 25px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
 }

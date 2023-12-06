@@ -27,7 +27,6 @@ fetch('/api/games')
     .then(data => {
         boardgamesData = data
         console.log(`Boardgame data retrieved`);
-        displayCards();
     })
     .catch(error => {
         console.error('Error trying to fetch boardgame data', error);
@@ -50,7 +49,6 @@ gameSeachForm.addEventListener(`submit`, function (event) {
     event.preventDefault();
     // Reset the wantedGames arreay in case this is not the first search
     wantedGames = [];
-
     // Get the values of the form elements
     const title = document.getElementById(`title-value`).value
     const age = document.getElementById(`age-value`).value

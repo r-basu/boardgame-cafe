@@ -49,7 +49,6 @@ gameSeachForm.addEventListener(`submit`, function (event) {
     event.preventDefault();
     // Reset the wantedGames arreay in case this is not the first search
     wantedGames = [];
-
     // Get the values of the form elements
     const title = document.getElementById(`title-value`).value
     const age = document.getElementById(`age-value`).value
@@ -61,76 +60,115 @@ gameSeachForm.addEventListener(`submit`, function (event) {
     if (!title == ``) {
         wantedGames.push(title);
         displayCards();
-    } else if (age == `` || players == `` || categories == `` || duration == ``) {
-        M.toast({ html: 'Please input a title or all the other fields', classes: 'rounded' })
+    } 
+    else if (age == `` && players == `` && categories == `` && duration == ``) {
+        M.toast({ html: 'Please input a title or fill any of the fields', classes: 'rounded' })
     } else {
         filterGames(age, players, categories, duration)
     }
 });
 
 const filterGames = (userAge, userPlayers, userCategories, userDuration) => {
+    // define the number of filters that the user used
+    let filtersUsed = 4;
+    let combinedArray = [];
+
     // filter age
-    const filteredByAge = boardgamesData.filter(game => game.minAge >= userAge);
-    const idByAge = [];
-    for (let game of filteredByAge) {
-        idByAge.push(game.id)
+    if(userAge == ``){
+        filtersUsed--
+    } else {
+        const filteredByAge = boardgamesData.filter(game => game.minAge >= userAge);
+        const idByAge = [];
+        for (let game of filteredByAge) {
+            idByAge.push(game.id)
+        }
+        combinedArray = combinedArray.concat(idByAge)
     }
+
     // filter the number of players
-    const filteredByPlayers = boardgamesData.filter(game => userPlayers >= game.minPlayers && userPlayers <= game.maxPlayers);
-    const idByPlayers = [];
-    for (let game of filteredByPlayers) {
-        idByPlayers.push(game.id)
+    if(userPlayers == ``){
+        filtersUsed--
+    } else{
+        const filteredByPlayers = boardgamesData.filter(game => userPlayers >= game.minPlayers && userPlayers <= game.maxPlayers);
+        const idByPlayers = [];
+        for (let game of filteredByPlayers) {
+            idByPlayers.push(game.id)
+        }
+        combinedArray = combinedArray.concat(idByPlayers);
     }
+    
     // filter categories
-    const filteredByCategory = [];
-    for (let game of boardgamesData) {
-        for (let category of game.Categories) {
-            for (let i = 0; i < userCategories.length; i++) {
-                if (category.name == userCategories[i]) {
-                    filteredByCategory.push(game);
-                    break;
+    if(userCategories == ``){
+        filtersUsed--
+    } else{
+        const filteredByCategory = [];
+        for (let game of boardgamesData) {
+            for (let category of game.Categories) {
+                for (let i = 0; i < userCategories.length; i++) {
+                    if (category.name == userCategories[i]) {
+                        filteredByCategory.push(game);
+                        break;
+                    };
                 };
             };
         };
-    };
-    const idByCategory = [];
-    for (let game of filteredByCategory) {
-        idByCategory.push(game.id)
+        const idByCategory = [];
+        for (let game of filteredByCategory) {
+            idByCategory.push(game.id)
+        }
+        combinedArray = combinedArray.concat(idByCategory)
     }
+    
     // Filter by game duration
-    const filteredByDuration = boardgamesData.filter(game => userDuration >= game.minTime && userDuration <= game.maxTime);
-    const idByDuration = [];
-    for (let game of filteredByDuration) {
-        idByDuration.push(game.id)
+    if(userDuration == ``){
+        filtersUsed--
+    } else{
+        const filteredByDuration = boardgamesData.filter(game => userDuration >= game.minTime && userDuration <= game.maxTime);
+        const idByDuration = [];
+        for (let game of filteredByDuration) {
+            idByDuration.push(game.id)
+        }
+        combinedArray = combinedArray.concat(idByDuration)
     }
+
     //combine all the arrays only with the values that are present in all of them
-    wantedGames = combineArrays(idByAge, idByCategory, idByDuration, idByPlayers)
-    console.log(wantedGames);
+    const filteredArray = resultArray(combinedArray, filtersUsed);
+    
+    wantedGames = [...filteredArray];
     if (wantedGames == ``) {
         alert(`We don't have a game with those parameters :( Please try including more categories when doing the search`)
     }
     displayCards();
 };
 
-const combineArrays = (array1, array2, array3, array4) => {
-    let combinedArray = [];
-    for (let num of array1) {
-        if (
-            array2.includes(num) &&
-            array3.includes(num) &&
-            array4.includes(num)
-        ) {
-            combinedArray.push(num);
+const resultArray = (array, numberOfFilters) => {
+    let filteredArray = [];
+    for (let num of array) {
+        const count = countIndexOccurrences(array, num)
+        if (count == numberOfFilters){
+            filteredArray.push(num);
         }
-    }
-    return combinedArray;
+    };
+    return filteredArray;
 }
 
-const displayCards = async () => {
-    // localStorage.setItem(`currentGames`, wantedGames);
-    // location.reload();
-    // const previousSearch = localStorage.getItem(`currentGames`);
-    
+const countIndexOccurrences = (arr, index) => {
+    let count = 0;  
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === index) {
+        count++;
+      }
+    }  
+    return count;
+}
+
+const displayCards = async (event) => {
+    // const previousSearch = localStorage.getItem(`currentGames`)
+    // console.log(previousSearch);
+    // localStorage.clear();
+    // if(!previousSearch){
+    //     return;
+    // }
     const gamesToDisplay = [];
     for (let id of wantedGames) {
         for (let game of boardgamesData) {
@@ -155,3 +193,10 @@ const displayCards = async () => {
         cardContainer.appendChild(card);
     }
 };
+
+// const saveGames = () => {
+//     localStorage.setItem(`currentGames`, JSON.stringify(wantedGames));
+//     location.reload();
+// }
+
+

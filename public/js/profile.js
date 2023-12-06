@@ -28,10 +28,10 @@ document.querySelector("#unclaimBtn").addEventListener("click", e => {
 
 document.querySelector("#logout").addEventListener("click", e => {
   fetch(`/api/users/logout/`, {
-  }).then(response => {
-    response.json();
-    location.assign("/login")
-  })
+    }).then(response => {
+      response.json();
+      location.assign("/login")
+    })
     .catch(error => {
       console.error('error trying to fetch api route', error);
     });

@@ -4,76 +4,74 @@
     {{!-- the random game card will be here --}}
   {{!-- </section> --}}
   <div class="formBox">
-    <button class="buttons" id="randomBtn" data-randomId = "{{randomGameId}}">Random Game Selection</button>
-    <h2 id="instructions">COMPLETE FORM FOR GAME SUGGESTION</h2>
-    <p id="details">Use the title field to look for any specific game OR use the other fields to filter the game library.</p>
+    <div id="top-div">
+      <h2 id="instructions">COMPLETE FORM FOR GAME SUGGESTION</h2>
+      <button class="buttons" id="randomBtn" data-randomId = "{{randomGameId}}">Random Game Selection</button> 
+      <p id="details">Use the title field to look for any specific game OR use the other fields to filter the game library.</p>
+    </div>   
     <form id="gameSeachForm">
       <div class="title-container">
-      <label for="title" id="title">Title:</label>
-      <div class="input-field col s12">
-        <select id="title-value">
-          <option value="" disabled selected>  Choose your option</option>
-          {{#each boardgames}}
-            <option value={{this.id}}>{{this.title}}</option>
-          {{/each}}
-        </select>
-      </div>
-      </div>
-    {{!-- adding a visual seperator to show break between option --}}
-    <hr class="separator">
-
-    <div class="row" id="user-parameters-form">
-      <label for="age">Age (years):</label>
-      <div class="input-field col s12">
-        <select id="age-value">
-          <option value="" disabled selected></option>
-          {{#each minAges}}
-            <option value="{{this.age}}">{{this.age}}</option>
-          {{/each}}
-        </select>
+        <label for="title" id="title">Title:</label>
+        <div class="input-field col s12">
+          <select id="title-value">
+            <option value="" disabled selected>  Choose your option</option>
+            {{#each boardgames}}
+              <option value={{this.id}}>{{this.title}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
 
-    <label for="players">Players (total):</label>
-    <div class="input-field col s12">
-      <select id="players-value">
-        <option value="" disabled selected></option>
-        {{#each players}}
-        <option value="{{this.player}}">{{this.player}}</option>
-        {{/each}}
-      </select>
-    </div>
+      <div class="row">
+        <label for="age">Age (years):</label>
+        <div class="input-field col s12">
+          <select id="age-value">
+            <option value="" disabled selected></option>
+            {{#each minAges}}
+              <option value="{{this.age}}">{{this.age}}+</option>
+            {{/each}}
+          </select>
+        </div>
 
-      <label for="duration">Game Duration (minutes):</label>
-      <div class="input-field col s12">
-        <select id="duration-value">
-          <option value="" disabled selected></option>
-          {{#each duration}}
-            <option value="{{this.time}}">{{this.time}}</option>
-          {{/each}}
-        </select>
+        <label for="players">Players (total):</label>
+        <div class="input-field col s12">
+          <select id="players-value">
+            <option value="" disabled selected></option>
+            {{#each players}}
+            <option value="{{this.player}}">{{this.player}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        <label for="duration">Game Duration (minutes):</label>
+        <div class="input-field col s12">
+          <select id="duration-value">
+            <option value="" disabled selected></option>
+            {{#each duration}}
+              <option value="{{this.time}}">{{this.time}}</option>
+            {{/each}}
+          </select>
+        </div>
       </div>
-    </div>
+
+      <!-- Add a new row for Categories dropdown -->
+      <div class="formBox" style="margin-top: auto;">
+          <div class="row" id="categories-div" style="margin-left: 234px;">
+            <label for="categories">Categories:</label>
+            <div class="input-field col s12" style="margin-right: 280px;">
+              <select multiple id="categories-value" name="categories-values">
+                {{#each categories}}
+                  <option value="{{this.name}}">{{this.name}}</option>
+                {{/each}}
+                </select>
+            </div>
+          </div>
+        <button class="buttons" type="submit" id="search-button">Game Search</button>
+      </div>
     </form>
   </div>
+  <section id="card-container" class="card-container">
 
-    <!-- Add a new row for Categories dropdown -->
-<div class="formBox" style="margin-top: auto;">
-  <form>
-    <div class="row" id="user-parameters-form" style="margin-left: 234px;">
-    <label for="categories">Categories:</label>
-    <div class="input-field col s12" style="margin-right: 280px;">
-      <select multiple id="categories-value" name="categories-values">
-        {{#each categories}}
-          <option value="{{this.name}}">{{this.name}}</option>
-        {{/each}}
-        </select>
-    </div>
-    </div>
-  </form>
-  <button class="buttons" type="submit" id="search-button">Game Search</button>
-</div>
-
-<section id="card-container" class="card-container">
-
-</section>
-<script src="/js/boardgames.js"></script>
+  </section>
+  <script src="/js/boardgames.js"></script>
+</body>

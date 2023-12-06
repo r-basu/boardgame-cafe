@@ -1,11 +1,10 @@
 <body>
-  <div>
-    <button class="buttons" id="randomBtn" data-randomId = "{{randomGameId}}">Random Game Selection</button>
-  </div>
+
   {{!-- <section id="random-game-card" class="card-container"> --}}
     {{!-- the random game card will be here --}}
   {{!-- </section> --}}
   <div class="formBox">
+    <button class="buttons" id="randomBtn" data-randomId = "{{randomGameId}}">Random Game Selection</button>
     <h2 id="instructions">COMPLETE FORM FOR GAME SUGGESTION</h2>
     <p id="details">Use the title field to look for any specific game OR use the other fields to filter the game library.</p>
     <form id="gameSeachForm">
@@ -21,7 +20,7 @@
       </div>
       </div>
     {{!-- adding a visual seperator to show break between option --}}
-    {{!-- <hr class="separator"> --}}
+    <hr class="separator">
 
     <div class="row" id="user-parameters-form">
       <label for="age">Age (years):</label>
@@ -34,7 +33,7 @@
         </select>
       </div>
 
-    <label for="players">Players:</label>
+    <label for="players">Players (total):</label>
     <div class="input-field col s12">
       <select id="players-value">
         <option value="" disabled selected></option>
@@ -54,22 +53,25 @@
         </select>
       </div>
     </div>
+    </form>
+  </div>
 
     <!-- Add a new row for Categories dropdown -->
-    <div class="row" id="user-parameters-form">
-      <label for="categories">Categories:</label>
-      <div class="input-field col s12">
-        <select multiple id="categories-value" name="categories-values">
+<div class="formBox" style="margin-top: auto;">
+  <form>
+    <div class="row" id="user-parameters-form" style="margin-left: 234px;">
+    <label for="categories">Categories:</label>
+    <div class="input-field col s12" style="margin-right: 280px;">
+      <select multiple id="categories-value" name="categories-values">
         {{#each categories}}
           <option value="{{this.name}}">{{this.name}}</option>
         {{/each}}
         </select>
-      </div>
     </div>
-
-      <button class="buttons" type="submit" id="search-button">Game Search</button>
-    </form>
-  </div>
+    </div>
+  </form>
+  <button class="buttons" type="submit" id="search-button">Game Search</button>
+</div>
 
 <section id="card-container" class="card-container">
 

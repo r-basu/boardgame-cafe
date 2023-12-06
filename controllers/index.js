@@ -4,11 +4,6 @@ const { User, Game, Review, Category, Shop } = require("../models")
 const Roll = require('roll')
 roll = new Roll();
 
-let randomRoll = roll.roll('d31')
-console.log(randomRoll.result)
-randomGameId = randomRoll.result
-
-
 const gameRoutes = require("./gameRoutes");
 router.use('/api/games', gameRoutes)
 
@@ -92,16 +87,21 @@ router.get("/boardgames", async (req, res) => {
       })
     };
 
+    // get the random id 
+    let randomRoll = roll.roll('d31')
+    console.log(randomRoll.result)
+    randomGameId = randomRoll.result
+
     const gamesPageData = {
       boardgames: boardgames,
       categories: categories,
       minAges: minAges,
       players: players,
-      duration: gameDuration
+      duration: gameDuration,
+      randomGameId: randomGameId
     };
 
     res.render("boardgames", gamesPageData)
-    console.log(gamesPageData)
   }
   catch (err) {
     console.log(err);

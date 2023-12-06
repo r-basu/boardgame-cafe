@@ -1,10 +1,10 @@
 <body>
   <div>
-    <button class="buttons" id="randomBtn">Random Game Selection</button>
+    <button class="buttons" id="randomBtn" data-randomId = "{{randomGameId}}">Random Game Selection</button>
   </div>
-  <section id="random-game-card" class="card-container">
-{{!-- the random game card will be here --}}
-  </section>
+  {{!-- <section id="random-game-card" class="card-container"> --}}
+    {{!-- the random game card will be here --}}
+  {{!-- </section> --}}
   <div class="formBox">
     <h2 id="instructions">COMPLETE FORM FOR GAME SUGGESTION</h2>
     <p id="details">Use the title field to look for any specific game OR use the other fields to filter the game library.</p>
@@ -12,7 +12,7 @@
       <div class="title-container">
       <label for="title" id="title">Title:</label>
       <div class="input-field col s12">
-        <select id="title">
+        <select id="title-value">
           <option value="" disabled selected>  Choose your option</option>
           {{#each boardgames}}
             <option value={{this.id}}>{{this.title}}</option>
@@ -21,12 +21,12 @@
       </div>
       </div>
     {{!-- adding a visual seperator to show break between option --}}
-    <hr class="separator">
+    {{!-- <hr class="separator"> --}}
 
     <div class="row" id="user-parameters-form">
-      <label for="age">Age(years):</label>
+      <label for="age">Age (years):</label>
       <div class="input-field col s12">
-        <select id="age">
+        <select id="age-value">
           <option value="" disabled selected></option>
           {{#each minAges}}
             <option value="{{this.age}}">{{this.age}}</option>
@@ -34,9 +34,9 @@
         </select>
       </div>
 
-    <label for="players">Players(total):</label>
+    <label for="players">Players:</label>
     <div class="input-field col s12">
-      <select id="players">
+      <select id="players-value">
         <option value="" disabled selected></option>
         {{#each players}}
         <option value="{{this.player}}">{{this.player}}</option>
@@ -44,7 +44,7 @@
       </select>
     </div>
 
-      <label for="duration">Game Duration(minutes):</label>
+      <label for="duration">Game Duration (minutes):</label>
       <div class="input-field col s12">
         <select id="duration-value">
           <option value="" disabled selected></option>
@@ -59,7 +59,7 @@
     <div class="row" id="user-parameters-form">
       <label for="categories">Categories:</label>
       <div class="input-field col s12">
-        <select multiple id="categories" name="categories-values">
+        <select multiple id="categories-value" name="categories-values">
         {{#each categories}}
           <option value="{{this.name}}">{{this.name}}</option>
         {{/each}}

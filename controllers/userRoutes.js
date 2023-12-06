@@ -9,6 +9,25 @@ router.get("/logout", (req, res) => {
     res.send("logged out!")
 })
 
+// Delete User
+router.delete("/delete/", (req, res) => {
+    User.destroy({
+        where: {
+            id: req.session.user.id
+        }
+    }).then(delUser=>{
+        req.session.destroy()
+        if(!delUser){
+            res.status(404).json({msg:"no such user!"})
+        } else{
+            res.json(delUser)
+        }
+    }).catch(err => {
+        console.log(err)
+        res.status(500).json({ msg: "oh no!", err })
+    })
+})
+
 // Create User
 router.post("/", (req, res) => {
     User.create({

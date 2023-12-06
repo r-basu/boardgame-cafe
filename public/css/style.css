@@ -373,6 +373,11 @@ img {
 
 .input-field.col.s12 {
   width: 45%;
+  margin-right: 287px;
+}
+
+#user-parameters-form.row{
+  margin-left: 243px
 }
 
 /* For small screens, make each column take 100% width */

@@ -29,7 +29,7 @@ To style the webpage, materalized framework is utilized and the back-end utilize
 ## Deployment Steps
 1. Set up a .env file matching `/config/connection.js` variables.
 2. If using Heroku, setup SESSION_SECRET env on application page, JAWSDB MySQL instance, and NodeJS buildpack.
-3. Seed the database with `npm run seed` or `heroku npm run seed` depending on local or heroku deployment.
+3. Seed the database with `npm run seed` or `heroku run npm run seed` depending on local or heroku deployment.
 4. Start the application on Heroku, or on local `npm run start`.
 
 

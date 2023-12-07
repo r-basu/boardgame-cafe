@@ -31,7 +31,7 @@ document.querySelector("#newUserForm").addEventListener("submit", e => {
                 }
                 loginUser(userCredentials)
             } else {
-                alert("trumpet sound")
+                M.toast({ html: 'Invalid Credentials', classes: 'rounded' })
             }
         })
     }

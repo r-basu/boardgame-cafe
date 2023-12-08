@@ -46,7 +46,7 @@ To style the webpage, materalized framework is utilized and the back-end utilize
 * [Rahul Basu](https://github.com/r-basu)
 
 ## Application Screenshots
-* HomePage ![alt text](/boardgame-cafe/public/assets/AppScreenshots/Homepage.jpeg)
+* Homepage ![Homepage](./public/assets/AppScreenshots/Homepage.jpeg)
 * Login Page ![alt text](/boardgame-cafe/public/assets/AppScreenshots/LoginPage.jpeg)
 * Board Game Form Page ![alt text](/boardgame-cafe/public/assets/AppScreenshots/Boardgamepage.jpeg)
 * Board Game Form Page - Game Search ![alt text](/boardgame-cafe/public/assets/AppScreenshots/bgpagesearch.jpeg)

@@ -25,7 +25,7 @@ To style the webpage, materalized framework is utilized and the back-end utilize
 
 ## Application 
 [Application Deployment](https://boardgame-cafe-1166881584c8.herokuapp.com/)
-[GitHub Repository] (https://github.com/r-basu/boardgame-cafe)
+[GitHub Repository](https://github.com/r-basu/boardgame-cafe)
 
 ## Deployment Steps
 1. Set up a .env file matching `/config/connection.js` variables.
